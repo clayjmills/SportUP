@@ -76,7 +76,6 @@
 		660C26B61E92CE40003F675C /* SportUP */ = {
 			isa = PBXGroup;
 			children = (
-				660C26C91E92CE49003F675C /* SportUP.entitlements */,
 				660C26BB1E92CE40003F675C /* Main.storyboard */,
 				660C26EF1E930B22003F675C /* Views */,
 				660C26DD1E92D1B5003F675C /* View Controllers */,
@@ -113,6 +112,7 @@
 				660C26BE1E92CE40003F675C /* Assets.xcassets */,
 				660C26B71E92CE40003F675C /* AppDelegate.swift */,
 				660C26C01E92CE40003F675C /* LaunchScreen.storyboard */,
+				660C26C91E92CE49003F675C /* SportUP.entitlements */,
 				660C26C31E92CE40003F675C /* Info.plist */,
 			);
 			name = Resources;
@@ -401,6 +401,7 @@
 				660C26C81E92CE40003F675C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

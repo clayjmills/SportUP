@@ -52,31 +52,41 @@
         <scene sceneID="YKc-8W-L3A">
             <objects>
                 <collectionViewController id="y3A-Yy-mZh" customClass="ShowSportsCollectionViewController" customModule="SportUP" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="unN-Gn-Rqc">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="unN-Gn-Rqc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tph-le-ZY2">
-                            <size key="itemSize" width="169" height="141"/>
+                            <size key="itemSize" width="165" height="185"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="sportListCell" id="2fp-G5-JUL" customClass="ShowSportsCollectionViewCell" customModule="SportUP" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="169" height="141"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="sportsListCell" id="2fp-G5-JUL" customClass="ShowSportsCollectionViewCell" customModule="SportUP" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="165" height="185"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="169" height="141"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="165" height="185"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aF0-vE-OTX">
-                                            <rect key="frame" x="6" y="6" width="157" height="128"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H75-Fu-ebM">
+                                            <rect key="frame" x="0.0" y="0.0" width="165" height="165"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Cc-Tf-2V9">
+                                            <rect key="frame" x="0.0" y="164" width="165" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </view>
+                                <size key="customSize" width="165" height="185"/>
                                 <connections>
+                                    <outlet property="imageView" destination="H75-Fu-ebM" id="Ssk-OV-iqJ"/>
+                                    <outlet property="sportsLabel" destination="3Cc-Tf-2V9" id="ghb-m4-ipi"/>
                                     <segue destination="E8G-Xy-nWz" kind="show" identifier="toMapVC" id="Ha1-iy-8y1"/>
                                 </connections>
                             </collectionViewCell>

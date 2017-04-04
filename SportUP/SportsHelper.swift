@@ -8,3 +8,8 @@
 
 import Foundation
 
+enum SportsHelper {
+    static var imageName = ["Baseball", "Basketball", "Football", "Golf", "Hockey", "Running", "Skateboarding", "Soccer", "Volleyball"]
+    
+    static var sportsNames = ["Baseball", "Basketball", "Football", "Golf", "Hockey", "Running", "Skateboarding", "Soccer", "Volleyball"]
+}

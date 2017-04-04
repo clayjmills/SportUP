@@ -10,5 +10,17 @@ import UIKit
 
 class ShowSportsCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var sportsLabel: UILabel!
     
+    var sports: Sports? {
+        didSet {
+            updateViews()
+        }
+    }
+    func updateViews() {
+        guard let sports = sports else {return}
+        imageView.image = UIImage(named: sports.imageName)
+        sportsLabel.text = sports.sportsName 
+    }
 }
