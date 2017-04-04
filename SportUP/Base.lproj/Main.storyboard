@@ -57,25 +57,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tph-le-ZY2">
-                            <size key="itemSize" width="165" height="185"/>
+                            <size key="itemSize" width="107" height="131"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="sportsListCell" id="2fp-G5-JUL" customClass="ShowSportsCollectionViewCell" customModule="SportUP" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="165" height="185"/>
+                                <rect key="frame" x="0.0" y="0.0" width="107" height="131"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="165" height="185"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="107" height="131"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H75-Fu-ebM">
-                                            <rect key="frame" x="0.0" y="0.0" width="165" height="165"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="107" height="115"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Cc-Tf-2V9">
-                                            <rect key="frame" x="0.0" y="164" width="165" height="21"/>
+                                            <rect key="frame" x="0.0" y="115" width="107" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -83,7 +83,8 @@
                                         </label>
                                     </subviews>
                                 </view>
-                                <size key="customSize" width="165" height="185"/>
+                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="customSize" width="107" height="131"/>
                                 <connections>
                                     <outlet property="imageView" destination="H75-Fu-ebM" id="Ssk-OV-iqJ"/>
                                     <outlet property="sportsLabel" destination="3Cc-Tf-2V9" id="ghb-m4-ipi"/>
