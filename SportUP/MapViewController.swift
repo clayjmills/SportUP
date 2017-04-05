@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import CoreLocation
+import MapKit
 
 class MapViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {

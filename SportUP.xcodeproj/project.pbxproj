@@ -21,6 +21,7 @@
 		660C26E81E930A48003F675C /* SportsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660C26E71E930A48003F675C /* SportsController.swift */; };
 		660C26EA1E930A7A003F675C /* SportsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660C26E91E930A7A003F675C /* SportsHelper.swift */; };
 		660C26EE1E930B17003F675C /* ShowSportsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660C26ED1E930B17003F675C /* ShowSportsCollectionViewCell.swift */; };
+		666BFC701E956676003041BA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 666BFC6F1E956676003041BA /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		660C26E71E930A48003F675C /* SportsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportsController.swift; sourceTree = "<group>"; };
 		660C26E91E930A7A003F675C /* SportsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportsHelper.swift; sourceTree = "<group>"; };
 		660C26ED1E930B17003F675C /* ShowSportsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowSportsCollectionViewCell.swift; sourceTree = "<group>"; };
+		666BFC6F1E956676003041BA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				666BFC701E956676003041BA /* CoreLocation.framework in Frameworks */,
 				660C26E01E92EC91003F675C /* MapKit.framework in Frameworks */,
 				660C26CC1E92CE4C003F675C /* CloudKit.framework in Frameworks */,
 			);
@@ -89,6 +92,7 @@
 		660C26CA1E92CE4C003F675C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				666BFC6F1E956676003041BA /* CoreLocation.framework */,
 				660C26DF1E92EC91003F675C /* MapKit.framework */,
 				660C26CB1E92CE4C003F675C /* CloudKit.framework */,
 			);
