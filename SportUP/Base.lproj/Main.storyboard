@@ -198,12 +198,12 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="23t-bt-c76">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="23t-bt-c76">
                                         <rect key="frame" x="75" y="169" width="260" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                        <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -221,6 +221,7 @@
                     </view>
                     <connections>
                         <outlet property="dateTextField" destination="xtP-39-Jo6" id="00s-Km-nPi"/>
+                        <outlet property="locationTextField" destination="23t-bt-c76" id="nbB-C3-4v5"/>
                         <outlet property="ownerTextField" destination="x3G-p5-iGB" id="L4t-BS-S5f"/>
                         <outlet property="sportsListPickerView" destination="VHZ-gw-Npl" id="Mgs-9a-Ht0"/>
                         <outlet property="timeTextField" destination="l1n-S7-vbE" id="Rr1-eu-qlg"/>

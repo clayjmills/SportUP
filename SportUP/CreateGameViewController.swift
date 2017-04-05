@@ -19,6 +19,9 @@ class CreateGameViewController: UIViewController, UIPickerViewDelegate {
     
     @IBOutlet weak var timeTextField: UITextField!
     
+    @IBOutlet weak var locationTextField: UITextField!
+    
+    
 //    var sportsList = SportsHelper[IndexPath]
 //    let picker = UIPickerView()
 //    
