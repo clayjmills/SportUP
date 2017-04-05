@@ -40,9 +40,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="fOB-zR-juM">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="kLr-0j-avU"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="fOB-zR-juM"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vmw-3t-kMg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
