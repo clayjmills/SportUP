@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CreateGameViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class CreateGameViewController: UIViewController, UIPickerViewDelegate {
     
     
     @IBOutlet weak var sportsListPickerView: UIPickerView!
@@ -19,30 +19,30 @@ class CreateGameViewController: UIViewController, UIPickerViewDelegate, UIPicker
     
     @IBOutlet weak var timeTextField: UITextField!
     
-    var sportsList = SportsHelper[IndexPath]
-    let picker = UIPickerView()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        picker.delegate = self
-        picker.dataSource = self
-        
-        sportsListPickerView.inputView = picker
-    }
-    
-    public func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return SportsHelper.imageName.count
-    }
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return SportsHelper[row]
-    }
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        sportsListPickerView.text = SportsHelper[row]
-        self.view.endEditing(false)
-    }
+//    var sportsList = SportsHelper[IndexPath]
+//    let picker = UIPickerView()
+//    
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        picker.delegate = self
+//        picker.dataSource = self
+//        
+//        sportsListPickerView.inputView = picker
+//    }
+//    
+//    public func numberOfComponents(in pickerView: UIPickerView) -> Int {
+//        return 1
+//    }
+//    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+//        return SportsHelper.imageName.count
+//    }
+//    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+//        return SportsHelper[row]
+//    }
+//    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+//        sportsListPickerView.text = SportsHelper[row]
+//        self.view.endEditing(false)
+//    }
     
     
     @IBAction func saveGameButtonTapped(_ sender: Any) {
