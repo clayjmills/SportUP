@@ -99,9 +99,9 @@
 			isa = PBXGroup;
 			children = (
 				660C26E31E92FB24003F675C /* MainViewController.swift */,
+				660C26D31E92D08A003F675C /* ShowSportsCollectionViewController.swift */,
 				660C26E11E92FA9F003F675C /* CreateGameViewController.swift */,
 				660C26D51E92D0F9003F675C /* MapViewController.swift */,
-				660C26D31E92D08A003F675C /* ShowSportsCollectionViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";

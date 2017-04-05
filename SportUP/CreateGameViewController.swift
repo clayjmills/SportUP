@@ -9,16 +9,20 @@
 import UIKit
 
 class CreateGameViewController: UIViewController {
-
+    
+    @IBOutlet weak var ownerTextField: UITextField!
+    
+    @IBOutlet weak var dateTextField: UITextField!
+    
+    @IBOutlet weak var timeTextField: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    
+    @IBAction func saveGameButtonTapped(_ sender: Any) {
     }
     
 
