@@ -230,6 +230,7 @@
                         <outlet property="dateTextField" destination="xtP-39-Jo6" id="00s-Km-nPi"/>
                         <outlet property="locationTextField" destination="23t-bt-c76" id="nbB-C3-4v5"/>
                         <outlet property="ownerTextField" destination="x3G-p5-iGB" id="L4t-BS-S5f"/>
+                        <outlet property="sportsListPickerView" destination="VHZ-gw-Npl" id="gfX-Ym-GDu"/>
                         <outlet property="timeTextField" destination="l1n-S7-vbE" id="Rr1-eu-qlg"/>
                     </connections>
                 </viewController>

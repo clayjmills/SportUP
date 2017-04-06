@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CreateGameViewController: UIViewController {
+class CreateGameViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     
     @IBOutlet weak var sportsListPickerView: UIPickerView!
@@ -17,43 +17,33 @@ class CreateGameViewController: UIViewController {
     @IBOutlet weak var timeTextField: UITextField!
     @IBOutlet weak var locationTextField: UITextField!
     
-//    var sportsNames = [SportsListArray]()
-//  
+    let array = [""]
+    
     override func viewDidLoad() {
        super.viewDidLoad()
         self.hideKeyboard()
-//        
-//        sportsListPickerView.delegate = self
-//        sportsListPickerView.dataSource = self
+        
+        sportsListPickerView.delegate = self
+        sportsListPickerView.dataSource = self
     }
     
     @IBAction func saveGameButtonTapped(_ sender: Any) {
     }
 //    
 //    
-////    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-////        return sportsNames[indexPath.row]
-////    }
-//    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-//        return sportsNames.count
-//    }
-//    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-//        
-//        return 1
-//    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return array[row]
     }
-    */
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return array.count
+    }
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        
+        return 1
+    }
 
 }
+// hides the keyboard
 extension UIViewController {
     func hideKeyboard() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer( target: self, action: #selector(UIViewController.dismissKeyboard))
