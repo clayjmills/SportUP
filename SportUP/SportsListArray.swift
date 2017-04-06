@@ -12,5 +12,5 @@ class SportsListArray {
     
     static var imageName = ["Baseball", "Basketball", "Football", "Golf", "Hockey", "Running", "Skateboarding", "Soccer", "Tennis", "Volleyball"]
     
-    static var sportsNames = ["⚾️Baseball", "🏀Basketball", "🏈Football", "⛳️Golf", "🏒Hockey", "🏃Running", "Skateboarding", "⚽️Soccer", "🎾Tennis", "🏐Volleyball"]
+    static var sportsNames = ["🏹Archery", "⚾️Baseball", "🏀Basketball", "🎱Billiards", "🌑Bocce", "Bodyboarding", "🚩Capture the flag", "🚴‍♀️Cycling", "🔘Disc golf", "🔴Dodgeball", "🏈Football", "🚩Flag football🏈", "🎮Gaming", "⛳️Golf", "⛰Hiking", "🏒Hockey", "🔴Kickball", "🥅Lacrosse", "Longboarding", "🏍Motorsports", "🚵Mountain biking", "Paintball", "🏓Pickleball", "🏓Ping pong", "Racquetball", "🏉Rugby", "🏃Running", "Skateboarding", "⛷Skiing", "⚽️Soccer", "⚾️Softball", "🎾Spikeball", "🏊Swimming", "🎾Tennis", "🏐Volleyball", "Wiffleball"]
 }

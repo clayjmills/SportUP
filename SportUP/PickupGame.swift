@@ -9,5 +9,9 @@
 import Foundation
 
 class PickupGame {
-    //name
+    //sport(from picker)
+    //owner
+    //location
+    //time
+    //date
 }
