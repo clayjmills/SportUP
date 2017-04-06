@@ -22,6 +22,7 @@
 		660C26EA1E930A7A003F675C /* SportsListArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660C26E91E930A7A003F675C /* SportsListArray.swift */; };
 		660C26EE1E930B17003F675C /* ShowSportsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660C26ED1E930B17003F675C /* ShowSportsCollectionViewCell.swift */; };
 		666BFC701E956676003041BA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 666BFC6F1E956676003041BA /* CoreLocation.framework */; };
+		66DFBAE61E96A481001B835E /* PickupGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DFBAE51E96A481001B835E /* PickupGame.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		660C26E91E930A7A003F675C /* SportsListArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportsListArray.swift; sourceTree = "<group>"; };
 		660C26ED1E930B17003F675C /* ShowSportsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowSportsCollectionViewCell.swift; sourceTree = "<group>"; };
 		666BFC6F1E956676003041BA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		66DFBAE51E96A481001B835E /* PickupGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickupGame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 			children = (
 				660C26E91E930A7A003F675C /* SportsListArray.swift */,
 				660C26E51E930A21003F675C /* Sports.swift */,
+				66DFBAE51E96A481001B835E /* PickupGame.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				660C26EA1E930A7A003F675C /* SportsListArray.swift in Sources */,
+				66DFBAE61E96A481001B835E /* PickupGame.swift in Sources */,
 				660C26D41E92D08A003F675C /* ShowSportsCollectionViewController.swift in Sources */,
 				660C26D61E92D0F9003F675C /* MapViewController.swift in Sources */,
 				660C26E21E92FA9F003F675C /* CreateGameViewController.swift in Sources */,

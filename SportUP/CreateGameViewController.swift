@@ -17,7 +17,7 @@ class CreateGameViewController: UIViewController, UIPickerViewDataSource, UIPick
     @IBOutlet weak var timeTextField: UITextField!
     @IBOutlet weak var locationTextField: UITextField!
     
-    let array = [""]
+    // put in variable property for PickupGame.swift
     
     override func viewDidLoad() {
        super.viewDidLoad()
@@ -25,21 +25,25 @@ class CreateGameViewController: UIViewController, UIPickerViewDataSource, UIPick
         
         sportsListPickerView.delegate = self
         sportsListPickerView.dataSource = self
+        
+        
     }
     
     @IBAction func saveGameButtonTapped(_ sender: Any) {
     }
 //    
-//    
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return array[row]
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
     }
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return array.count
+        return SportsListArray.sportsNames.count
     }
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+//
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
-        return 1
+        let string = SportsListArray.sportsNames[row]
+        
+        return string
     }
 
 }

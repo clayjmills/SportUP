@@ -10,8 +10,8 @@ import Foundation
 
 class Sports {
     
-    let sportsName: String
-    let imageName: String
+    var sportsName: String
+    var imageName: String
     
     init(sportsName: String, imageName: String) {
         self.sportsName = sportsName
