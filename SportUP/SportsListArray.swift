@@ -10,7 +10,7 @@ import Foundation
 
 class SportsListArray {
     
-    static var imageName = ["Baseball", "Basketball", "Football", "Golf", "Hockey", "Running", "Skateboarding", "Soccer", "Tennis", "Volleyball"]
+    static var imageName = ["Baseball", "Basketball", "Capture the flag", "Cycling", "Disc golf", "Football", "Gaming", "Golf", "Hiking", "Hockey", "Kickball", "Lacrosse", "Motorsports", "Mountain biking", "Ping pong", "Rugby", "Running", "Skateboarding", "Skiing", "Soccer", "Swimming", "Tennis", "Volleyball"]
     
-    static var sportsNames = ["🏹Archery", "⚾️Baseball", "🏀Basketball", "🎱Billiards", "🌑Bocce", "Bodyboarding", "🚩Capture the flag", "🚴‍♀️Cycling", "🔘Disc golf", "🔴Dodgeball", "🏈Football", "🚩Flag football🏈", "🎮Gaming", "⛳️Golf", "⛰Hiking", "🏒Hockey", "🔴Kickball", "🥅Lacrosse", "Longboarding", "🏍Motorsports", "🚵Mountain biking", "Paintball", "🏓Pickleball", "🏓Ping pong", "Racquetball", "🏉Rugby", "🏃Running", "Skateboarding", "⛷Skiing", "⚽️Soccer", "⚾️Softball", "🎾Spikeball", "🏊Swimming", "🎾Tennis", "🏐Volleyball", "Wiffleball"]
+    static var sportsNames = ["⚾️Baseball", "🏀Basketball", "🚩Capture the flag", "🚴‍♀️Cycling", "🔘Disc golf", "🏈Football", "🎮Gaming", "⛳️Golf", "⛰Hiking", "🏒Hockey", "🔴Kickball", "🥅Lacrosse", "🏍Motorsports", "🚵Mountain biking", "🏓Ping pong", "🏉Rugby", "🏃Running", "Skateboarding", "⛷Skiing", "⚽️Soccer", "🏊Swimming", "🎾Tennis", "🏐Volleyball"]
 }
