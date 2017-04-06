@@ -8,9 +8,10 @@
 
 import UIKit
 
-class CreateGameViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class CreateGameViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
     
     
+    @IBOutlet weak var ScrollView: UIScrollView!
     @IBOutlet weak var sportsListPickerView: UIPickerView!
     @IBOutlet weak var ownerTextField: UITextField!
     @IBOutlet weak var dateTextField: UITextField!
@@ -21,17 +22,17 @@ class CreateGameViewController: UIViewController, UIPickerViewDataSource, UIPick
     
     override func viewDidLoad() {
        super.viewDidLoad()
-        self.hideKeyboard()
+//        self.hideKeyboard()
         
         sportsListPickerView.delegate = self
         sportsListPickerView.dataSource = self
-        
-        
     }
-    
     @IBAction func saveGameButtonTapped(_ sender: Any) {
     }
-//    
+    
+    
+    
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -47,13 +48,13 @@ class CreateGameViewController: UIViewController, UIPickerViewDataSource, UIPick
     }
 
 }
-// hides the keyboard
-extension UIViewController {
-    func hideKeyboard() {
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer( target: self, action: #selector(UIViewController.dismissKeyboard))
-        view.addGestureRecognizer(tap)
-    }
-    func dismissKeyboard() {
-        view.endEditing(true)
-    }
-}
+//// hides the keyboard
+//extension UIViewController {
+//    func hideKeyboard() {
+//        let tap: UITapGestureRecognizer = UITapGestureRecognizer( target: self, action: #selector(UIViewController.dismissKeyboard))
+//        view.addGestureRecognizer(tap)
+//    }
+//    func dismissKeyboard() {
+//        view.endEditing(true)
+//    }
+//}
