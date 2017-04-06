@@ -24,36 +24,39 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //properties continued
+// conforms it to delegate method
         locationManager.delegate = self
-        
-        // continued from location function
+        // use location services only when app is on (not in background)
         locationManager.requestWhenInUseAuthorization()
+        // turns on location manager to look for location
         locationManager.startUpdatingLocation()
         
-        //show location on map
+        //show location on map (location delegate methods)
         map.delegate = self
+        // shows user location
         map.showsUserLocation = true
 
     }
-    
+    // location delegate methods
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
+        // passes in didupdatelocations
         let location = locations.last
+        // center of the location
         let center = CLLocationCoordinate2D(latitude: location!.coordinate.latitude, longitude: location!.coordinate.longitude)
+        // map zooms to this region we give it
         let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
+        // make sure mapview zooms into the region (animation is for the zoom)
         self.map.setRegion(region, animated: true)
+        
         self.locationManager.stopUpdatingLocation()
         
     }
-    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
-        print("Errors: " + error.localizedDescription)
-    }
-    
+    // set the colors of the pins (green for user, red for pickup games)
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let pin = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "pin")
         pin.canShowCallout = true
-        pin.pinTintColor = UIColor.blue
+        pin.pinTintColor = UIColor.green
         
         if let title = annotation.title {
             if title == "My location" {
@@ -65,7 +68,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
 
 }
 
-//create a custom class
+////create a custom class
 class CustomAnnotation: NSObject, MKAnnotation {
     //properties
     var latitude: Double
@@ -81,7 +84,6 @@ class CustomAnnotation: NSObject, MKAnnotation {
     //return the coordinate made by latitude and longitude
     var coordinate: CLLocationCoordinate2D {
         let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-        var span = MKCoordinateSpan(latitudeDelta: 0.0002, longitudeDelta: 0.0002)
         return coordinate
     }
     var title: String? {
