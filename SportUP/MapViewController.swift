@@ -18,34 +18,49 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     var currentLocation: CustomAnnotation?
     var shown: Bool = false
 
-    
-    
-//    @IBOutlet weak var sportLabel: UILabel!
+    @IBOutlet weak var sportLabel: UILabel!
     @IBOutlet weak var map: MKMapView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var currentLocation: CLLocationManager
-        
-        
+        //properties continued
         locationManager.delegate = self
+        
+        // continued from location function
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         
+        //show location on map
         map.delegate = self
         map.showsUserLocation = true
 
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.last {
-            let _ = "latitude: \(location.coordinate.latitude) longitude: \(location.coordinate.longitude)"
         
-            let _ = CustomAnnotation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude, name: "My location")
-            var span = MKCoordinateSpanMake(0.002, 0.0002)
-           
+        let location = locations.last
+        let center = CLLocationCoordinate2D(latitude: location!.coordinate.latitude, longitude: location!.coordinate.longitude)
+        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
+        self.map.setRegion(region, animated: true)
+        self.locationManager.stopUpdatingLocation()
+        
+    }
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        print("Errors: " + error.localizedDescription)
+    }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        let pin = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "pin")
+        pin.canShowCallout = true
+        pin.pinTintColor = UIColor.blue
+        
+        if let title = annotation.title {
+            if title == "My location" {
+                pin.pinTintColor = UIColor.red
+            }
         }
+        return pin
     }
 
 }
@@ -66,6 +81,7 @@ class CustomAnnotation: NSObject, MKAnnotation {
     //return the coordinate made by latitude and longitude
     var coordinate: CLLocationCoordinate2D {
         let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        var span = MKCoordinateSpan(latitudeDelta: 0.0002, longitudeDelta: 0.0002)
         return coordinate
     }
     var title: String? {
