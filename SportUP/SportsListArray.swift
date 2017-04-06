@@ -1,5 +1,5 @@
 //
-//  SportsHelper.swift
+//  SportsListArray.swift
 //  SportUP
 //
 //  Created by Clay Mills on 4/3/17.
@@ -8,7 +8,8 @@
 
 import Foundation
 
-enum SportsHelper {
+class SportsListArray {
+    
     static var imageName = ["Baseball", "Basketball", "Football", "Golf", "Hockey", "Running", "Skateboarding", "Soccer", "Tennis", "Volleyball"]
     
     static var sportsNames = ["Baseball", "Basketball", "Football", "Golf", "Hockey", "Running", "Skateboarding", "Soccer", "Tennis", "Volleyball"]

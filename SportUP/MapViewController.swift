@@ -10,19 +10,24 @@ import UIKit
 import CoreLocation
 import MapKit
 
+
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
     // create properties
     var locationManager: CLLocationManager = CLLocationManager()
     var currentLocation: CustomAnnotation?
     var shown: Bool = false
-    
 
-    @IBOutlet weak var sportLabel: UILabel!
+    
+    
+//    @IBOutlet weak var sportLabel: UILabel!
     @IBOutlet weak var map: MKMapView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var currentLocation: CLLocationManager
+        
         
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
@@ -30,13 +35,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         map.delegate = self
         map.showsUserLocation = true
-        
 
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -44,20 +43,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             let _ = "latitude: \(location.coordinate.latitude) longitude: \(location.coordinate.longitude)"
         
             let _ = CustomAnnotation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude, name: "My location")
-            
+            var span = MKCoordinateSpanMake(0.002, 0.0002)
+           
         }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
