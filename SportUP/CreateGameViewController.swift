@@ -30,8 +30,27 @@ class CreateGameViewController: UIViewController, UIPickerViewDataSource, UIPick
     @IBAction func saveGameButtonTapped(_ sender: Any) {
     }
     
-    
-    
+    // Keyboard
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    // have textfields stay on top of keyboard
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if (textField == ownerTextField){
+            ScrollView.setContentOffset(CGPoint(x: 0, y: 180), animated: true)
+        }   else if textField == dateTextField {
+            self.ScrollView.setContentOffset(CGPoint(x: 0, y: 180), animated: true)
+         } else if textField == timeTextField {
+            self.ScrollView.setContentOffset(CGPoint(x: 0, y: 180), animated: true)
+        } else if textField == locationTextField {
+            self.ScrollView.setContentOffset(CGPoint(x: 0, y: 180), animated: true)
+        }
+    }
+
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        ScrollView.setContentOffset(CGPoint(x:0,y:0), animated: true)
+    }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
