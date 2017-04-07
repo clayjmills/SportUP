@@ -47,18 +47,20 @@ class CreateGameViewController: UIViewController, UIPickerViewDataSource, UIPick
             self.ScrollView.setContentOffset(CGPoint(x: 0, y: 180), animated: true)
         }
     }
-
     func textFieldDidEndEditing(_ textField: UITextField) {
         ScrollView.setContentOffset(CGPoint(x:0,y:0), animated: true)
     }
     
+    // pulling array of sports labels into the pickerview
+    // components =
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
+    // how many rows/cells do we need to load all of our array? use arrayName.count to make a row for every item in the array.
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return SportsListArray.sportsNames.count
     }
-//
+// grab the name out of the ray and display it.
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
         let string = SportsListArray.sportsNames[row]
@@ -67,13 +69,3 @@ class CreateGameViewController: UIViewController, UIPickerViewDataSource, UIPick
     }
 
 }
-//// hides the keyboard
-//extension UIViewController {
-//    func hideKeyboard() {
-//        let tap: UITapGestureRecognizer = UITapGestureRecognizer( target: self, action: #selector(UIViewController.dismissKeyboard))
-//        view.addGestureRecognizer(tap)
-//    }
-//    func dismissKeyboard() {
-//        view.endEditing(true)
-//    }
-//}
