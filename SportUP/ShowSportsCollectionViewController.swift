@@ -25,4 +25,16 @@ class ShowSportsCollectionViewController: UICollectionViewController {
         cell.sports = sports
         return cell 
     }
+    
+//    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+//        return SportsListArray.sportsNames.count
+//    }
+//    // grab the name out of the ray and display it.
+//    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+//        
+//        let string = SportsListArray.sportsNames[row]
+//        
+//        return string
+//    }
+
 }
