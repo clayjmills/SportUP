@@ -26,15 +26,24 @@ class ShowSportsCollectionViewController: UICollectionViewController {
         return cell 
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toMapVC" {
+            guard let indexPath = collectionView?.indexPathsForSelectedItems?.first,
+                let mapVC = segue.destination as? MapViewController else {return}
+            let sportLabel = SportsListArray.sportsNames[indexPath.row]
+            mapVC.sportType = sportLabel
+        }
+    }
+    
+    // work on the pickerview to collectionview
 //    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
 //        return SportsListArray.sportsNames.count
 //    }
-//    // grab the name out of the ray and display it.
+//    // grab the name out of the array and display it.
 //    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
 //        
 //        let string = SportsListArray.sportsNames[row]
 //        
 //        return string
 //    }
-
 }

@@ -13,11 +13,14 @@ import MapKit
 
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
+    
+    
     // create properties
     var locationManager: CLLocationManager = CLLocationManager()
     var currentLocation: CustomAnnotation?
     var shown: Bool = false
-
+    var sportType: String?
+   
     @IBOutlet weak var sportLabel: UILabel!
     @IBOutlet weak var map: MKMapView!
     
@@ -35,6 +38,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         map.delegate = self
         // shows user location
         map.showsUserLocation = true
+        
+        sportLabel.text = sportType
 
     }
     // location delegate methods
@@ -52,6 +57,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         self.locationManager.stopUpdatingLocation()
         
     }
+
     // set the colors of the pins (blue for user, red for pickup games)
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let pin = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "pin")

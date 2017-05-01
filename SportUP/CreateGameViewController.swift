@@ -22,7 +22,7 @@ class CreateGameViewController: UIViewController, UIPickerViewDataSource, UIPick
     
     override func viewDidLoad() {
        super.viewDidLoad()
-//        self.hideKeyboard()
+  //      self.hideKeyboard()
         
         sportsListPickerView.delegate = self
         sportsListPickerView.dataSource = self
