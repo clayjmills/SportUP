@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Motorsports.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "Motorsports.png",
       "scale" : "2x"
     },
     {

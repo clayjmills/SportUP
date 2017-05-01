@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Basketball.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "Basketball.png",
       "scale" : "2x"
     },
     {

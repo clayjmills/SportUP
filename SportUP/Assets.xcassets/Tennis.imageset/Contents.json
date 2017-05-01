@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Tennis.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "Tennis.png",
       "scale" : "2x"
     },
     {
