@@ -16,18 +16,29 @@ class CreateGameViewController: UIViewController, UIPickerViewDataSource, UIPick
     @IBOutlet weak var ownerTextField: UITextField!
     @IBOutlet weak var dateTextField: UITextField!
     @IBOutlet weak var timeTextField: UITextField!
-    @IBOutlet weak var locationTextField: UITextField!
-    
+    @IBOutlet weak var saveGameButtonTapped: UIButton!
+    @IBOutlet weak var toMapViewButtonTapped: UIButton!
     // put in variable property for PickupGame.swift
     
     override func viewDidLoad() {
        super.viewDidLoad()
-  //      self.hideKeyboard()
+        self.updateViews()
         
         sportsListPickerView.delegate = self
         sportsListPickerView.dataSource = self
     }
     @IBAction func saveGameButtonTapped(_ sender: Any) {
+    }
+    
+    func updateViews() {
+        self.saveGameButtonTapped.backgroundColor = UIColor.lightGray
+        self.saveGameButtonTapped.layer.cornerRadius = 16
+        self.saveGameButtonTapped.setTitle("Save New Pickup Game", for: .normal)
+        
+        self.toMapViewButtonTapped.backgroundColor = UIColor.lightGray
+        self.toMapViewButtonTapped.layer.cornerRadius = 5
+        self.toMapViewButtonTapped.setTitle("Pick Location for Game", for: .normal)
+
     }
     
     // Keyboard
@@ -43,8 +54,8 @@ class CreateGameViewController: UIViewController, UIPickerViewDataSource, UIPick
             self.ScrollView.setContentOffset(CGPoint(x: 0, y: 180), animated: true)
          } else if textField == timeTextField {
             self.ScrollView.setContentOffset(CGPoint(x: 0, y: 180), animated: true)
-        } else if textField == locationTextField {
-            self.ScrollView.setContentOffset(CGPoint(x: 0, y: 180), animated: true)
+//        } else if textField == locationTextField {
+//            self.ScrollView.setContentOffset(CGPoint(x: 0, y: 180), animated: true)
         }
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
