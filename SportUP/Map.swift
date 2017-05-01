@@ -9,9 +9,6 @@
 import Foundation
 
 class Map {
-    
-    // sports names
-    // array of the collection view
-    // display only selected sport
+    // sports names, array of the collection view, display only selected sport
     
 }

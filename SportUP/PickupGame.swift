@@ -10,7 +10,7 @@ import Foundation
 
 class PickupGame {
     //sport(from picker), owner, time, date, location
-    var sport: String
+    var sport: String 
     var owner: String
     var time: String
     var date: String
