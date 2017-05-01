@@ -52,11 +52,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         self.locationManager.stopUpdatingLocation()
         
     }
-    // set the colors of the pins (green for user, red for pickup games)
+    // set the colors of the pins (blue for user, red for pickup games)
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let pin = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "pin")
         pin.canShowCallout = true
-        pin.pinTintColor = UIColor.green
+        pin.pinTintColor = UIColor.blue
         
         if let title = annotation.title {
             if title == "My location" {

@@ -60,7 +60,7 @@ class CreateGameViewController: UIViewController, UIPickerViewDataSource, UIPick
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return SportsListArray.sportsNames.count
     }
-// grab the name out of the ray and display it.
+// grab the name out of the array and display it.
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
         let string = SportsListArray.sportsNames[row]

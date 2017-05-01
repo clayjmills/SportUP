@@ -25,7 +25,7 @@
                                 <rect key="frame" x="16" y="251" width="343" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.37188470363616943" green="0.80599504709243774" blue="0.98978835344314575" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Find pickup game button">
+                                <state key="normal" title="Title">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
