@@ -7,8 +7,17 @@
 //
 
 import Foundation
+import CoreLocation
 
-class Map {
-    // sports names, array of the collection view, display only selected sport
+struct Map {
+    var location: CLLocationCoordinate2D
+    var title: String?
+    var subtitle: String?
+    
+    init(location: CLLocationCoordinate2D, title: String? = nil, subtitle: String? = nil) {
+        self.location = location
+        self.title = title
+        self.subtitle = subtitle 
+    }
     
 }

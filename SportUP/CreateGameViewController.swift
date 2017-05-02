@@ -18,7 +18,7 @@ class CreateGameViewController: UIViewController, UIPickerViewDataSource, UIPick
     @IBOutlet weak var ownerTextField: UITextField!
     @IBOutlet weak var dateTextField: UITextField!
     @IBOutlet weak var timeTextField: UITextField!
-    @IBOutlet weak var saveGameButtonTapped: UIButton!
+//    @IBOutlet weak var saveGameButtonTapped: UIButton!
     @IBOutlet weak var toMapViewButtonTapped: UIButton!
     // put in variable property for PickupGame.swift
     
@@ -29,13 +29,13 @@ class CreateGameViewController: UIViewController, UIPickerViewDataSource, UIPick
         sportsListPickerView.delegate = self
         sportsListPickerView.dataSource = self
     }
-    @IBAction func saveGameButtonTapped(_ sender: Any) {
-    }
+//    @IBAction func saveGameButtonTapped(_ sender: Any) {
+//    }
     
     func updateViews() {
-        self.saveGameButtonTapped.backgroundColor = UIColor.lightGray
-        self.saveGameButtonTapped.layer.cornerRadius = 16
-        self.saveGameButtonTapped.setTitle("Save New Pickup Game", for: .normal)
+//        self.saveGameButtonTapped.backgroundColor = UIColor.lightGray
+//        self.saveGameButtonTapped.layer.cornerRadius = 16
+//        self.saveGameButtonTapped.setTitle("Save New Pickup Game", for: .normal)
         
         self.toMapViewButtonTapped.setBackgroundImage(#imageLiteral(resourceName: "mapScreenShot"), for: .normal)
         self.toMapViewButtonTapped.layer.cornerRadius = 5
@@ -82,13 +82,13 @@ class CreateGameViewController: UIViewController, UIPickerViewDataSource, UIPick
     }
     
     // segue to to map from pickerView
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toSportPickerMapView" {
-            guard let indexPath = sportsListPickerView?.numberOfRows(inComponent: 1),
-            let mapVC = segue.destination as? MapViewController else {return}
-            let sportLabel = SportsListArray.sportsNames[indexPath.row]
-            mapVC.sportType = sportLabel
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "toSportPickerMapView" {
+//            guard let indexPath = sportsListPickerView?.numberOfRows(inComponent: 1),
+//            let mapVC = segue.destination as? MapViewController else {return}
+//            let sportLabel = SportsListArray.sportsNames[indexPath.row]
+//            mapVC.sportType = sportLabel
+//        }
+//    }
 
 }

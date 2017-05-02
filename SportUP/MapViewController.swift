@@ -14,6 +14,8 @@ import MapKit
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
     
+    @IBOutlet weak var sportLabel: UILabel!
+    @IBOutlet weak var map: MKMapView!
     
     // create properties
     var locationManager: CLLocationManager = CLLocationManager()
@@ -21,8 +23,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     var shown: Bool = false
     var sportType: String?
    
-    @IBOutlet weak var sportLabel: UILabel!
-    @IBOutlet weak var map: MKMapView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +40,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         map.showsUserLocation = true
         
         sportLabel.text = sportType
+        
+        //long press gesture time
+        let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(addPinForNewSport(press:)))
+        longPressGestureRecognizer.minimumPressDuration = 1.0
+        map.addGestureRecognizer(longPressGestureRecognizer)
 
     }
     // location delegate methods
@@ -56,6 +61,24 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         self.locationManager.stopUpdatingLocation()
         
+    }
+    
+    // add the long press gesture recognizer
+    func addPinForNewSport(press: UILongPressGestureRecognizer) {
+        if press.state == .began {
+            //where you touch
+            let location = press.location(in: map)
+            // get the coordinates
+            let coordinates = map.convert(location, toCoordinateFrom: map)
+            //give location annotation
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = coordinates
+            // fill in the annotation
+            annotation.title = "Owner"
+            annotation.subtitle = "Time and date"
+            
+            map.addAnnotation(annotation)
+        }
     }
 
     // set the colors of the pins (blue for user, red for pickup games)
