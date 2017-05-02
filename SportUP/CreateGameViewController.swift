@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 
 class CreateGameViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
     
@@ -35,9 +37,9 @@ class CreateGameViewController: UIViewController, UIPickerViewDataSource, UIPick
         self.saveGameButtonTapped.layer.cornerRadius = 16
         self.saveGameButtonTapped.setTitle("Save New Pickup Game", for: .normal)
         
-        self.toMapViewButtonTapped.backgroundColor = UIColor.lightGray
+        self.toMapViewButtonTapped.setBackgroundImage(#imageLiteral(resourceName: "mapScreenShot"), for: .normal)
         self.toMapViewButtonTapped.layer.cornerRadius = 5
-        self.toMapViewButtonTapped.setTitle("Pick Location for Game", for: .normal)
+        self.toMapViewButtonTapped.setTitle("", for: .normal)
 
     }
     
@@ -54,8 +56,8 @@ class CreateGameViewController: UIViewController, UIPickerViewDataSource, UIPick
             self.ScrollView.setContentOffset(CGPoint(x: 0, y: 180), animated: true)
          } else if textField == timeTextField {
             self.ScrollView.setContentOffset(CGPoint(x: 0, y: 180), animated: true)
-//        } else if textField == locationTextField {
-//            self.ScrollView.setContentOffset(CGPoint(x: 0, y: 180), animated: true)
+        } else if textField == toMapViewButtonTapped {
+            self.ScrollView.setContentOffset(CGPoint(x: 0, y: 180), animated: true)
         }
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
@@ -77,6 +79,16 @@ class CreateGameViewController: UIViewController, UIPickerViewDataSource, UIPick
         let string = SportsListArray.sportsNames[row]
         
         return string
+    }
+    
+    // segue to to map from pickerView
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toSportPickerMapView" {
+            guard let indexPath = sportsListPickerView?.numberOfRows(inComponent: 1),
+            let mapVC = segue.destination as? MapViewController else {return}
+            let sportLabel = SportsListArray.sportsNames[indexPath.row]
+            mapVC.sportType = sportLabel
+        }
     }
 
 }

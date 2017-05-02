@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import MapKit
 
 class PickupGame {
     //sport(from picker), owner, time, date, location
@@ -14,13 +15,15 @@ class PickupGame {
     var owner: String
     var time: String
     var date: String
-   // var location =
+    //CL = Core Location
+    var location: CLLocation
     
-    init(sport: String, owner: String, time: String, date: String) {
+    init(sport: String, owner: String, time: String, date: String, location: CLLocation) {
     self.sport = sport
     self.owner = owner
     self.time = time
     self.date = date
+    self.location = location
     }
    
 }

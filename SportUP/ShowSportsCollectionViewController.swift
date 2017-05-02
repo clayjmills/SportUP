@@ -35,15 +35,15 @@ class ShowSportsCollectionViewController: UICollectionViewController {
         }
     }
     
-    // work on the pickerview to collectionview
-//    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-//        return SportsListArray.sportsNames.count
-//    }
-//    // grab the name out of the array and display it.
-//    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-//        
-//        let string = SportsListArray.sportsNames[row]
-//        
-//        return string
-//    }
+    // NOT FINISHED!!!!!!! work on the pickerview to collectionview
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return SportsListArray.sportsNames.count
+    }
+    // grab the name out of the array and display it.
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        let string = SportsListArray.sportsNames[row]
+        
+        return string
+    }
 }
