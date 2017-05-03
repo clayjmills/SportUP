@@ -76,6 +76,15 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             // fill in the annotation
             annotation.title = "Owner"
             annotation.subtitle = "Time and date"
+//            let pin = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "pin")
+//            pin.canShowCallout = true
+//            pin.pinTintColor = UIColor.red
+//            
+//            if let title = annotation.title {
+//                if title == "Owner" {
+//                    pin.pinTintColor = UIColor.blue
+//                }
+//            }
             
             map.addAnnotation(annotation)
         }

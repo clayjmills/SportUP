@@ -81,7 +81,7 @@ class CreateGameViewController: UIViewController, UIPickerViewDataSource, UIPick
         return string
     }
     
-    // segue to to map from pickerView
+    // segue to map from pickerView
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        if segue.identifier == "toSportPickerMapView" {
 //            guard let indexPath = sportsListPickerView?.numberOfRows(inComponent: 1),
