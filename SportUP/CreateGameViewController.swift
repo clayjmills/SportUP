@@ -18,8 +18,9 @@ class CreateGameViewController: UIViewController, UIPickerViewDataSource, UIPick
     @IBOutlet weak var ownerTextField: UITextField!
     @IBOutlet weak var dateTextField: UITextField!
     @IBOutlet weak var timeTextField: UITextField!
-//    @IBOutlet weak var saveGameButtonTapped: UIButton!
     @IBOutlet weak var toMapViewButtonTapped: UIButton!
+    //    @IBOutlet weak var saveGameButtonTapped: UIButton!
+    
     // put in variable property for PickupGame.swift
     
     override func viewDidLoad() {
@@ -29,6 +30,12 @@ class CreateGameViewController: UIViewController, UIPickerViewDataSource, UIPick
         sportsListPickerView.delegate = self
         sportsListPickerView.dataSource = self
     }
+    
+    @IBAction func mapViewButtonTapped(_ sender: Any) {
+        //ownerTextField.text
+        
+    }
+    
 //    @IBAction func saveGameButtonTapped(_ sender: Any) {
 //    }
     
@@ -69,7 +76,7 @@ class CreateGameViewController: UIViewController, UIPickerViewDataSource, UIPick
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
-    // how many rows/cells do we need to load all of our array? use arrayName.count to make a row for every item in the array.
+    // how many rows/cells do we need to load out of our array? use 'arrayName'.count to make a row for every item in the array.
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return SportsListArray.sportsNames.count
     }
@@ -83,11 +90,18 @@ class CreateGameViewController: UIViewController, UIPickerViewDataSource, UIPick
     
     // segue to map from pickerView
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "toSportPickerMapView" {
-//            guard let indexPath = sportsListPickerView?.numberOfRows(inComponent: 1),
-//            let mapVC = segue.destination as? MapViewController else {return}
+//        if segue.identifier == "toMapVC" {
+//            guard let indexPath = collectionView?.indexPathsForSelectedItems?.first,
+//                let mapVC = segue.destination as? MapViewController else {return}
 //            let sportLabel = SportsListArray.sportsNames[indexPath.row]
 //            mapVC.sportType = sportLabel
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "toSportPickerMapView" {
+//            guard let indexPath = sportsListPickerView.numberOfRows(inComponent: [row]),
+//            let mapCreateVC = segue.destination as? MapViewController else {return}
+//            let sportLabel = SportsListArray.sportsNames[indexPath.row]
+//            mapCreateVC.sportType = sportLabel
 //        }
 //    }
 

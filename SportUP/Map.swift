@@ -11,13 +11,17 @@ import CoreLocation
 
 struct Map {
     var location: CLLocationCoordinate2D
+    var dropPinLocation: CLLocation
     var title: String?
     var subtitle: String?
     
-    init(location: CLLocationCoordinate2D, title: String? = nil, subtitle: String? = nil) {
+    init(location: CLLocationCoordinate2D, dropPinLocation: CLLocation, title: String? = nil, subtitle: String? = nil) {
         self.location = location
+        self.dropPinLocation = dropPinLocation
         self.title = title
         self.subtitle = subtitle 
     }
+    
+    // location, didSet -> address
     
 }

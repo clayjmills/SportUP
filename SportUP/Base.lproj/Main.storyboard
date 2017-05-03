@@ -134,17 +134,33 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b9J-ik-L6f">
+                                <rect key="frame" x="16" y="568" width="343" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.29923731006368237" green="0.42221687994617962" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Mi-5A-jeV">
+                                <rect key="frame" x="16" y="119" width="343" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.29923731006368237" green="0.42221687994617962" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="dropPinLocationLabel" destination="6Mi-5A-jeV" id="4Uf-zR-Ovn"/>
                         <outlet property="map" destination="LgK-Xs-EbU" id="uvz-IO-MWF"/>
+                        <outlet property="pinLocationLabel" destination="b9J-ik-L6f" id="CC4-w3-fYQ"/>
                         <outlet property="sportLabel" destination="2MB-0b-baH" id="QnL-gg-8OK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6S1-HA-VDi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4014" y="687"/>
+            <point key="canvasLocation" x="4013.5999999999999" y="686.80659670164926"/>
         </scene>
         <!--Create Game View Controller-->
         <scene sceneID="aWZ-oK-hCP">
@@ -242,6 +258,7 @@
                                         <rect key="frame" x="277" y="516" width="82" height="71"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <connections>
+                                            <action selector="mapViewButtonTapped:" destination="Amt-yw-5HR" eventType="touchUpInside" id="xlY-FQ-Uyt"/>
                                             <segue destination="E8G-Xy-nWz" kind="show" identifier="toSportPickerMapView" id="JQo-Jo-xjI"/>
                                         </connections>
                                     </button>
@@ -256,7 +273,7 @@
                         <outlet property="ownerTextField" destination="x3G-p5-iGB" id="L4t-BS-S5f"/>
                         <outlet property="sportsListPickerView" destination="VHZ-gw-Npl" id="gfX-Ym-GDu"/>
                         <outlet property="timeTextField" destination="l1n-S7-vbE" id="Rr1-eu-qlg"/>
-                        <outlet property="toMapViewButtonTapped" destination="ehQ-o5-e6T" id="bCF-Ln-Anw"/>
+                        <outlet property="toMapViewButtonTapped" destination="ehQ-o5-e6T" id="vkh-7p-DTN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uh9-4T-phC" userLabel="First Responder" sceneMemberID="firstResponder"/>

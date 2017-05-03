@@ -17,23 +17,28 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     @IBOutlet weak var sportLabel: UILabel!
     @IBOutlet weak var map: MKMapView!
     
+    @IBOutlet weak var pinLocationLabel: UILabel!
+    
+    @IBOutlet weak var dropPinLocationLabel: UILabel!
+    
+    
     // create properties
     var locationManager: CLLocationManager = CLLocationManager()
     var currentLocation: CustomAnnotation?
     var shown: Bool = false
     var sportType: String?
-   
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-// conforms it to delegate method
+        // conforms it to delegate method
         locationManager.delegate = self
         // use location services only when app is on (not in background)
         locationManager.requestWhenInUseAuthorization()
         // turns on location manager to look for location
         locationManager.startUpdatingLocation()
-        
+        //desired accuracy
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
         //show location on map (location delegate methods)
         map.delegate = self
         // shows user location
@@ -45,15 +50,15 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(addPinForNewSport(press:)))
         longPressGestureRecognizer.minimumPressDuration = 0.5
         map.addGestureRecognizer(longPressGestureRecognizer)
-
+        
     }
     // location delegate methods
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         // passes in didupdatelocations
-        let location = locations.last
+        let location = locations[0]
         // center of the location
-        let center = CLLocationCoordinate2D(latitude: location!.coordinate.latitude, longitude: location!.coordinate.longitude)
+        let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
         // map zooms to the region we give it
         let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
         // make sure mapview zooms into the region (animation is for the zoom)
@@ -61,35 +66,61 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         self.locationManager.stopUpdatingLocation()
         
+        self.map.showsUserLocation = true
+        
+        //reverse geocoding to get address for locations
+        CLGeocoder().reverseGeocodeLocation(location) { (placemark, error) in
+            if error != nil
+            {
+                print ("There was an error")
+            }
+            else
+            {
+                if let place = placemark?[0] {
+                    self.pinLocationLabel.text = place.name
+                }
+            }
+        }
+        
     }
     
-    // add the long press gesture recognizer
+    // add the long press gesture recognizer for pin drop
     func addPinForNewSport(press: UILongPressGestureRecognizer) {
         if press.state == .began {
             //where you touch
-            let location = press.location(in: map)
+            let point = press.location(in: map)
             // get the coordinates
-            let coordinates = map.convert(location, toCoordinateFrom: map)
+            let coordinates = map.convert(point, toCoordinateFrom: map)
             //give location annotation
             let annotation = MKPointAnnotation()
             annotation.coordinate = coordinates
             // fill in the annotation
             annotation.title = "Owner"
             annotation.subtitle = "Time and date"
-//            let pin = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "pin")
-//            pin.canShowCallout = true
-//            pin.pinTintColor = UIColor.red
-//            
-//            if let title = annotation.title {
-//                if title == "Owner" {
-//                    pin.pinTintColor = UIColor.blue
-//                }
-//            }
-            
             map.addAnnotation(annotation)
+            
+            let location = CLLocation(latitude: annotation.coordinate.latitude, longitude: annotation.coordinate.longitude)
+            
+            //reverse geocoding to get address for droppedPin
+            CLGeocoder().reverseGeocodeLocation(location) { (placemarks, error) in
+                if let error = error
+                {
+                    print ("There was an error: \(error.localizedDescription)")
+                    return
+                }
+                
+//                if let place = placemark?(in: map) {
+//                    self.dropPinLocationLabel.text = place.name
+//                }
+                guard let placemark = placemarks?.first else { return }
+                
+                if let name = placemark.addressDictionary?["Name"] as? String {
+                    self.dropPinLocationLabel.text = name
+                }
+            }
         }
     }
-
+    
     // set the colors of the pins (blue for user, red for pickup games)
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let pin = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "pin")
@@ -103,7 +134,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         }
         return pin
     }
-
+    
 }
 
 ////create a custom class
