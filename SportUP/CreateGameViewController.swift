@@ -30,9 +30,23 @@ class CreateGameViewController: UIViewController, UIPickerViewDataSource, UIPick
         sportsListPickerView.delegate = self
         sportsListPickerView.dataSource = self
     }
+    // call the alert
+    override func viewDidAppear(_ animated: Bool) {
+        createAlert(title: "Oops", message: "Fill out all text fields")
+    }
     
     @IBAction func mapViewButtonTapped(_ sender: Any) {
         
+    }
+    
+    // alert controller for map button if text fields are not all filled in
+    func createAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: { (action) in
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     
     
