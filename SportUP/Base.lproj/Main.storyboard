@@ -252,6 +252,7 @@
                     </view>
                     <connections>
                         <outlet property="ScrollView" destination="sP7-RL-7yl" id="lBq-yx-IFT"/>
+                        <outlet property="datePickerView" destination="H1J-CJ-VrX" id="Qce-Wm-bAZ"/>
                         <outlet property="ownerTextField" destination="x3G-p5-iGB" id="L4t-BS-S5f"/>
                         <outlet property="sportsListPickerView" destination="VHZ-gw-Npl" id="gfX-Ym-GDu"/>
                         <outlet property="toMapViewButtonTapped" destination="ehQ-o5-e6T" id="vkh-7p-DTN"/>

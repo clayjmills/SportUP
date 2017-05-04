@@ -14,10 +14,13 @@ class CreateGameViewController: UIViewController, UIPickerViewDataSource, UIPick
     
     
     @IBOutlet weak var ScrollView: UIScrollView!
+    
     @IBOutlet weak var sportsListPickerView: UIPickerView!
+    @IBOutlet weak var datePickerView: UIDatePicker!
+    
     @IBOutlet weak var ownerTextField: UITextField!
-    @IBOutlet weak var dateTextField: UITextField!
-    @IBOutlet weak var timeTextField: UITextField!
+//    @IBOutlet weak var dateTextField: UITextField!
+//    @IBOutlet weak var timeTextField: UITextField!
     @IBOutlet weak var toMapViewButtonTapped: UIButton!
     //    @IBOutlet weak var saveGameButtonTapped: UIButton!
     
@@ -29,6 +32,8 @@ class CreateGameViewController: UIViewController, UIPickerViewDataSource, UIPick
         
         sportsListPickerView.delegate = self
         sportsListPickerView.dataSource = self
+        
+        
     }
     // call the alert
     override func viewDidAppear(_ animated: Bool) {
@@ -73,10 +78,6 @@ class CreateGameViewController: UIViewController, UIPickerViewDataSource, UIPick
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if (textField == ownerTextField){
             ScrollView.setContentOffset(CGPoint(x: 0, y: 180), animated: true)
-//        }   else if textField == dateTextField {
-//            self.ScrollView.setContentOffset(CGPoint(x: 0, y: 180), animated: true)
-//        } else if textField == timeTextField {
-//            self.ScrollView.setContentOffset(CGPoint(x: 0, y: 180), animated: true)
         } else if textField == toMapViewButtonTapped {
             self.ScrollView.setContentOffset(CGPoint(x: 0, y: 180), animated: true)
         }
@@ -104,7 +105,7 @@ class CreateGameViewController: UIViewController, UIPickerViewDataSource, UIPick
     
     // segue to map from pickerView
     //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    //        if segue.identifier == "toMapVC" {
+    //        if segue.identifier == "toSportPickerMapView" {
     //            guard let indexPath = collectionView?.indexPathsForSelectedItems?.first,
     //                let mapVC = segue.destination as? MapViewController else {return}
     //            let sportLabel = SportsListArray.sportsNames[indexPath.row]

@@ -18,7 +18,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     @IBOutlet weak var map: MKMapView!
     
     @IBOutlet weak var pinLocationLabel: UILabel!
-    
     @IBOutlet weak var dropPinLocationLabel: UILabel!
     
     
@@ -97,7 +96,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             annotation.coordinate = coordinates
             // fill in the annotation
             annotation.title = "Owner"
-            annotation.subtitle = "PickerView"
+            annotation.subtitle = "datePicker"
             //add the annotation
             map.addAnnotation(annotation)
             
