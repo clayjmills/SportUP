@@ -24,7 +24,7 @@ class CreateGameViewController: UIViewController, UIPickerViewDataSource, UIPick
     // put in variable property for PickupGame.swift
     
     override func viewDidLoad() {
-       super.viewDidLoad()
+        super.viewDidLoad()
         self.updateViews()
         
         sportsListPickerView.delegate = self
@@ -32,22 +32,22 @@ class CreateGameViewController: UIViewController, UIPickerViewDataSource, UIPick
     }
     
     @IBAction func mapViewButtonTapped(_ sender: Any) {
-        //ownerTextField.text
         
     }
     
-//    @IBAction func saveGameButtonTapped(_ sender: Any) {
-//    }
+    
+    //    @IBAction func saveGameButtonTapped(_ sender: Any) {
+    //    }
     
     func updateViews() {
-//        self.saveGameButtonTapped.backgroundColor = UIColor.lightGray
-//        self.saveGameButtonTapped.layer.cornerRadius = 16
-//        self.saveGameButtonTapped.setTitle("Save New Pickup Game", for: .normal)
+        //        self.saveGameButtonTapped.backgroundColor = UIColor.lightGray
+        //        self.saveGameButtonTapped.layer.cornerRadius = 16
+        //        self.saveGameButtonTapped.setTitle("Save New Pickup Game", for: .normal)
         
         self.toMapViewButtonTapped.setBackgroundImage(#imageLiteral(resourceName: "mapScreenShot"), for: .normal)
         self.toMapViewButtonTapped.layer.cornerRadius = 5
         self.toMapViewButtonTapped.setTitle("", for: .normal)
-
+        
     }
     
     // Keyboard
@@ -61,7 +61,7 @@ class CreateGameViewController: UIViewController, UIPickerViewDataSource, UIPick
             ScrollView.setContentOffset(CGPoint(x: 0, y: 180), animated: true)
         }   else if textField == dateTextField {
             self.ScrollView.setContentOffset(CGPoint(x: 0, y: 180), animated: true)
-         } else if textField == timeTextField {
+        } else if textField == timeTextField {
             self.ScrollView.setContentOffset(CGPoint(x: 0, y: 180), animated: true)
         } else if textField == toMapViewButtonTapped {
             self.ScrollView.setContentOffset(CGPoint(x: 0, y: 180), animated: true)
@@ -80,7 +80,7 @@ class CreateGameViewController: UIViewController, UIPickerViewDataSource, UIPick
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return SportsListArray.sportsNames.count
     }
-// grab the name out of the array and display it.
+    // grab the name out of the array and display it.
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
         let string = SportsListArray.sportsNames[row]
@@ -89,20 +89,20 @@ class CreateGameViewController: UIViewController, UIPickerViewDataSource, UIPick
     }
     
     // segue to map from pickerView
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "toMapVC" {
-//            guard let indexPath = collectionView?.indexPathsForSelectedItems?.first,
-//                let mapVC = segue.destination as? MapViewController else {return}
-//            let sportLabel = SportsListArray.sportsNames[indexPath.row]
-//            mapVC.sportType = sportLabel
+    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    //        if segue.identifier == "toMapVC" {
+    //            guard let indexPath = collectionView?.indexPathsForSelectedItems?.first,
+    //                let mapVC = segue.destination as? MapViewController else {return}
+    //            let sportLabel = SportsListArray.sportsNames[indexPath.row]
+    //            mapVC.sportType = sportLabel
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "toSportPickerMapView" {
-//            guard let indexPath = sportsListPickerView.numberOfRows(inComponent: [row]),
-//            let mapCreateVC = segue.destination as? MapViewController else {return}
-//            let sportLabel = SportsListArray.sportsNames[indexPath.row]
-//            mapCreateVC.sportType = sportLabel
-//        }
-//    }
-
+    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    //        if segue.identifier == "toSportPickerMapView" {
+    //            guard let indexPath = sportsListPickerView.numberOfRows(inComponent: [row]),
+    //            let mapCreateVC = segue.destination as? MapViewController else {return}
+    //            let sportLabel = SportsListArray.sportsNames[indexPath.row]
+    //            mapCreateVC.sportType = sportLabel
+    //        }
+    //    }
+    
 }
