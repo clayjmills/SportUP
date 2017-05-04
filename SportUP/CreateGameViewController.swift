@@ -32,7 +32,7 @@ class CreateGameViewController: UIViewController, UIPickerViewDataSource, UIPick
     }
     // call the alert
     override func viewDidAppear(_ animated: Bool) {
-        createAlert(title: "Oops", message: "Fill out all text fields")
+        createAlert(title: "Hey!", message: "Fill out all text fields")
     }
     
     @IBAction func mapViewButtonTapped(_ sender: Any) {
@@ -73,10 +73,10 @@ class CreateGameViewController: UIViewController, UIPickerViewDataSource, UIPick
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if (textField == ownerTextField){
             ScrollView.setContentOffset(CGPoint(x: 0, y: 180), animated: true)
-        }   else if textField == dateTextField {
-            self.ScrollView.setContentOffset(CGPoint(x: 0, y: 180), animated: true)
-        } else if textField == timeTextField {
-            self.ScrollView.setContentOffset(CGPoint(x: 0, y: 180), animated: true)
+//        }   else if textField == dateTextField {
+//            self.ScrollView.setContentOffset(CGPoint(x: 0, y: 180), animated: true)
+//        } else if textField == timeTextField {
+//            self.ScrollView.setContentOffset(CGPoint(x: 0, y: 180), animated: true)
         } else if textField == toMapViewButtonTapped {
             self.ScrollView.setContentOffset(CGPoint(x: 0, y: 180), animated: true)
         }

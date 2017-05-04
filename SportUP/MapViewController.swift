@@ -51,6 +51,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         longPressGestureRecognizer.minimumPressDuration = 0.5
         map.addGestureRecognizer(longPressGestureRecognizer)
         
+        
     }
     // location delegate methods
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -96,8 +97,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             annotation.coordinate = coordinates
             // fill in the annotation
             annotation.title = "Owner"
-            annotation.subtitle = "Time and date"
+            annotation.subtitle = "PickerView"
+            //add the annotation
             map.addAnnotation(annotation)
+            
             
             let location = CLLocation(latitude: annotation.coordinate.latitude, longitude: annotation.coordinate.longitude)
             
@@ -109,9 +112,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                     return
                 }
                 
-//                if let place = placemark?(in: map) {
-//                    self.dropPinLocationLabel.text = place.name
-//                }
                 guard let placemark = placemarks?.first else { return }
                 
                 if let name = placemark.addressDictionary?["Name"] as? String {
