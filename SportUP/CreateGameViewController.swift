@@ -17,12 +17,11 @@ class CreateGameViewController: UIViewController, UIPickerViewDataSource, UIPick
     
     @IBOutlet weak var sportsListPickerView: UIPickerView!
     @IBOutlet weak var datePickerView: UIDatePicker!
+    @IBOutlet weak var saveDateButtonTapped: UIButton!
     
+    @IBOutlet weak var viewDateTextField: UITextField!
     @IBOutlet weak var ownerTextField: UITextField!
     @IBOutlet weak var toMapViewButtonTapped: UIButton!
-    //    @IBOutlet weak var saveGameButtonTapped: UIButton!
-    
-    // put in variable property for PickupGame.swift
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,8 +30,12 @@ class CreateGameViewController: UIViewController, UIPickerViewDataSource, UIPick
         sportsListPickerView.delegate = self
         sportsListPickerView.dataSource = self
         
-        
     }
+    
+    @IBAction func saveDateButtonTapped(_ sender: Any) {
+        viewDateTextField.text = DateFormatter.localizedString(from: datePickerView.date, dateStyle: DateFormatter.Style.long, timeStyle: DateFormatter.Style.short)
+    }
+    
     // call the alert
     override func viewDidAppear(_ animated: Bool) {
         createAlert(title: "Hey!", message: "Fill out all text fields")
@@ -54,6 +57,12 @@ class CreateGameViewController: UIViewController, UIPickerViewDataSource, UIPick
     
     func updateViews() {
         
+        // button to save date picker
+        self.saveDateButtonTapped.backgroundColor = UIColor.lightGray
+        self.saveDateButtonTapped.layer.cornerRadius = 5
+        self.saveDateButtonTapped.setTitleColor(UIColor.white, for: .normal)
+        
+        // button to mapView 
         self.toMapViewButtonTapped.setBackgroundImage(#imageLiteral(resourceName: "mapScreenShot"), for: .normal)
         self.toMapViewButtonTapped.layer.cornerRadius = 5
         self.toMapViewButtonTapped.setTitle("", for: .normal)

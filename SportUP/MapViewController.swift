@@ -20,7 +20,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     @IBOutlet weak var pinLocationLabel: UILabel!
     @IBOutlet weak var dropPinLocationLabel: UILabel!
     
-    
     // create properties
     var locationManager: CLLocationManager = CLLocationManager()
     var currentLocation: CustomAnnotation?
@@ -50,8 +49,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         longPressGestureRecognizer.minimumPressDuration = 0.5
         map.addGestureRecognizer(longPressGestureRecognizer)
         
-        
     }
+    //save game button
+    @IBAction func saveGameButtonTapped(_ sender: Any) {
+    }
+    
+    
     // location delegate methods
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
@@ -81,7 +84,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 }
             }
         }
-        
     }
     
     // add the long press gesture recognizer for pin drop
@@ -96,7 +98,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             annotation.coordinate = coordinates
             // fill in the annotation
             annotation.title = "Owner"
-            annotation.subtitle = "datePicker"
+            annotation.subtitle = ""
             //add the annotation
             map.addAnnotation(annotation)
             
