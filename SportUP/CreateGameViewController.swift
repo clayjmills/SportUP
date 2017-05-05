@@ -19,8 +19,6 @@ class CreateGameViewController: UIViewController, UIPickerViewDataSource, UIPick
     @IBOutlet weak var datePickerView: UIDatePicker!
     
     @IBOutlet weak var ownerTextField: UITextField!
-//    @IBOutlet weak var dateTextField: UITextField!
-//    @IBOutlet weak var timeTextField: UITextField!
     @IBOutlet weak var toMapViewButtonTapped: UIButton!
     //    @IBOutlet weak var saveGameButtonTapped: UIButton!
     
@@ -54,14 +52,7 @@ class CreateGameViewController: UIViewController, UIPickerViewDataSource, UIPick
         self.present(alert, animated: true, completion: nil)
     }
     
-    
-    //    @IBAction func saveGameButtonTapped(_ sender: Any) {
-    //    }
-    
     func updateViews() {
-        //        self.saveGameButtonTapped.backgroundColor = UIColor.lightGray
-        //        self.saveGameButtonTapped.layer.cornerRadius = 16
-        //        self.saveGameButtonTapped.setTitle("Save New Pickup Game", for: .normal)
         
         self.toMapViewButtonTapped.setBackgroundImage(#imageLiteral(resourceName: "mapScreenShot"), for: .normal)
         self.toMapViewButtonTapped.layer.cornerRadius = 5
