@@ -31,17 +31,19 @@ class CreateGameViewController: UIViewController, UIPickerViewDataSource, UIPick
         sportsListPickerView.dataSource = self
         
     }
-    
+    // save datepicker info to textfield
     @IBAction func saveDateButtonTapped(_ sender: Any) {
         viewDateTextField.text = DateFormatter.localizedString(from: datePickerView.date, dateStyle: DateFormatter.Style.long, timeStyle: DateFormatter.Style.short)
     }
     
-    // call the alert
-    override func viewDidAppear(_ animated: Bool) {
-        createAlert(title: "Hey!", message: "Fill out all text fields")
-    }
-    
+    // call the alert if owner text field is not filled in
     @IBAction func mapViewButtonTapped(_ sender: Any) {
+        if ownerTextField.text == "" {
+            createAlert(title: "Hey!", message: "Fill out Owner text field")
+            return
+        } else {
+            performSegue(withIdentifier: "toSportPickerMapView", sender: self)
+        }
         
     }
     

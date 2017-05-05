@@ -25,6 +25,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     var currentLocation: CustomAnnotation?
     var shown: Bool = false
     var sportType: String?
+    var owner: String?
+    var date: Date?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -97,8 +99,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             let annotation = MKPointAnnotation()
             annotation.coordinate = coordinates
             // fill in the annotation
-            annotation.title = "Owner"
-            annotation.subtitle = ""
+            annotation.title = "owner"
+            annotation.subtitle = "self.viewDateTextField.text"
             //add the annotation
             map.addAnnotation(annotation)
             
