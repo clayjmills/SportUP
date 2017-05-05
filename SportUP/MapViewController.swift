@@ -68,9 +68,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
         // make sure mapview zooms into the region (animation is for the zoom)
         self.map.setRegion(region, animated: true)
-        
         self.locationManager.stopUpdatingLocation()
-        
         self.map.showsUserLocation = true
         
         //reverse geocoding to get address for locations
@@ -126,12 +124,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     // set the colors of the pins (blue for user, red for pickup games)
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        //make user location (pin) blue
         let pin = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "pin")
         pin.canShowCallout = true
         pin.pinTintColor = UIColor.blue
-        
+        //make color of dropped pins red
         if let title = annotation.title {
-            if title == "My location" {
+            if title == "owner" {
                 pin.pinTintColor = UIColor.red
             }
         }
