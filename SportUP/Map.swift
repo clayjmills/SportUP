@@ -19,7 +19,7 @@ struct Map {
         self.location = location
         self.dropPinLocation = dropPinLocation
         self.title = title
-        self.subtitle = subtitle 
+        self.subtitle = subtitle
     }
     
     // location, didSet -> address

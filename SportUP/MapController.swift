@@ -10,6 +10,6 @@ import Foundation
 
 class MapController {
     
-    //show selected sport in a pin, 
+    //show selected sport in the label 
     
 }

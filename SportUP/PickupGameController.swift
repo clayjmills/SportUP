@@ -7,15 +7,11 @@
 //
 
 import Foundation
+import CloudKit
 
 class PickupGameController {
     static let shared = PickupGameController()
     
-    var sportsList: [Sports] = []
-    
-    init() {
-        self.sportsList = createAllSports()
-    }
     func createAllSports() -> [Sports] {
         
         var placeHolderSports: [Sports] = []
@@ -33,7 +29,12 @@ class PickupGameController {
         return placeHolderSports
     }
     
-    func createPickupGame() {
+    func createPickupGame(sport: String, date: Date, location: CLLocation) {
+        
+ //       let pickUpGame = PickupGame(sport: sport, owner: <#T##String#>, date: date, location: location)
+        
+        // Save pickUpGame to CloudKit
+        
         
     }
 

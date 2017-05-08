@@ -21,15 +21,19 @@ class SportsController {
         
         var placeHolderSports: [Sports] = []
         
-        for sportsNames in SportsListArray.sportsNames {
+        for sportsName in SportsListArray.sportsNames {
             
-            guard let index = SportsListArray.sportsNames.index(of: sportsNames) else {return []}
+            guard let index = SportsListArray.sportsNames.index(of: sportsName) else {return []}
             
-            let imageNames = SportsListArray.imageName[index]
+            if index > 0 {
+                
+                let imageNames = SportsListArray.imageName[index - 1]
+                
+                let sports = Sports(sportsName: sportsName, imageName: imageNames)
+                
+                placeHolderSports.append(sports)
+            }
             
-            let sports = Sports(sportsName: sportsNames, imageName: imageNames)
-            
-            placeHolderSports.append(sports)
         }
         return placeHolderSports 
     }

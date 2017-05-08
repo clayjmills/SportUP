@@ -11,7 +11,7 @@ import CoreLocation
 import MapKit
 
 
-class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
+class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UIPickerViewDelegate {
     
     
     @IBOutlet weak var sportLabel: UILabel!
@@ -28,7 +28,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     var owner: String?
     var date: Date?
     var annotations: [MKPointAnnotation] = []
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -53,10 +53,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         map.addGestureRecognizer(longPressGestureRecognizer)
         
     }
-    //save game button (not done)
-//    @IBAction func saveGameButtonTapped(_ sender: Any) {
-//    }
-//    
+    // save game button (not done)
+    @IBAction func saveGameButtonTapped(_ sender: Any) {
+        
+  //      PickupGameController.shared.createPickupGame()
+    }
+//
 //    //Alertview when hitting save button on mapView
 //    func createAlert(title: String, message: String) {
 //        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
@@ -91,8 +93,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             {
                 if let place = placemark?[0] {
                     self.pinLocationLabel.text = place.name
-                    self.pinLocationLabel.text = place.administrativeArea
-                    self.pinLocationLabel.text = place.locality
                     self.pinLocationLabel.text = place.thoroughfare
                 }
             }
@@ -101,7 +101,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     // add the long press gesture recognizer for pin drop
     func addPinForNewSport(press: UILongPressGestureRecognizer) {
-        
 
         if press.state == .began {
             map.removeAnnotations(annotations)
@@ -118,8 +117,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             self.annotations.append(annotation)
             //add the annotation
             map.addAnnotations(self.annotations)
-            
-            
+            // get location
             let location = CLLocation(latitude: annotation.coordinate.latitude, longitude: annotation.coordinate.longitude)
             
             //reverse geocoding to get address for droppedPin
@@ -144,11 +142,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
     
     // set the colors of the pins (blue for user, red for pickup games), fill the annotation with needed info
-    
-    //    annotation.title = "owner"
-    //    annotation.subtitle = "self.viewDateTextField.text"
-    
-    
+  
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         //make user location (pin) blue
         let pin = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "pin")
@@ -163,7 +157,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         return pin
     }
 }
-
 ////create a custom class
 class CustomAnnotation: NSObject, MKAnnotation {
     //properties

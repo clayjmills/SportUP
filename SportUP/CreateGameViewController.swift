@@ -20,8 +20,9 @@ class CreateGameViewController: UIViewController, UIPickerViewDataSource, UIPick
     @IBOutlet weak var saveDateButtonTapped: UIButton!
     
     @IBOutlet weak var viewDateTextField: UITextField!
-    @IBOutlet weak var ownerTextField: UITextField!
     @IBOutlet weak var toMapViewButtonTapped: UIButton!
+    
+    var pickerSelectedSport: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,25 +38,25 @@ class CreateGameViewController: UIViewController, UIPickerViewDataSource, UIPick
     }
     
     // call the alert if owner text field is not filled in
-    @IBAction func mapViewButtonTapped(_ sender: Any) {
-        if ownerTextField.text == "" {
-            createAlert(title: "Hey!", message: "Fill out Owner text field")
-            return
-        } else {
-            performSegue(withIdentifier: "toSportPickerMapView", sender: self)
-        }
-        
-    }
-    
+//    @IBAction func mapViewButtonTapped(_ sender: Any) {
+//        if ownerTextField.text == "" {
+//            createAlert(title: "Hey!", message: "Fill out Owner text field")
+//            return
+//        } else {
+//            performSegue(withIdentifier: "toSportPickerMapView", sender: self)
+//        }
+//        
+//    }
+//
     // alert controller for map button if textfield not filled in
-    func createAlert(title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-        
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: { (action) in
-            alert.dismiss(animated: true, completion: nil)
-        }))
-        self.present(alert, animated: true, completion: nil)
-    }
+//    func createAlert(title: String, message: String) {
+//        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+//        
+//        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: { (action) in
+//            alert.dismiss(animated: true, completion: nil)
+//        }))
+//        self.present(alert, animated: true, completion: nil)
+//    }
     
     func updateViews() {
         
@@ -64,7 +65,7 @@ class CreateGameViewController: UIViewController, UIPickerViewDataSource, UIPick
         self.saveDateButtonTapped.layer.cornerRadius = 5
         self.saveDateButtonTapped.setTitleColor(UIColor.white, for: .normal)
         
-        // button to mapView 
+        // button to mapView
         self.toMapViewButtonTapped.setBackgroundImage(#imageLiteral(resourceName: "mapScreenShot"), for: .normal)
         self.toMapViewButtonTapped.layer.cornerRadius = 5
         self.toMapViewButtonTapped.setTitle("", for: .normal)
@@ -72,21 +73,21 @@ class CreateGameViewController: UIViewController, UIPickerViewDataSource, UIPick
     }
     
     // Keyboard
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-    // have textfields stay on top of keyboard
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        if (textField == ownerTextField){
-            ScrollView.setContentOffset(CGPoint(x: 0, y: 180), animated: true)
-        } else if textField == toMapViewButtonTapped {
-            self.ScrollView.setContentOffset(CGPoint(x: 0, y: 180), animated: true)
-        }
-    }
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        ScrollView.setContentOffset(CGPoint(x:0,y:0), animated: true)
-    }
+//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//        textField.resignFirstResponder()
+//        return true
+//    }
+//    // have textfields stay on top of keyboard
+//    func textFieldDidBeginEditing(_ textField: UITextField) {
+//        if (textField == ownerTextField){
+//            ScrollView.setContentOffset(CGPoint(x: 0, y: 180), animated: true)
+//        } else if textField == toMapViewButtonTapped {
+//            self.ScrollView.setContentOffset(CGPoint(x: 0, y: 180), animated: true)
+//        }
+//    }
+//    func textFieldDidEndEditing(_ textField: UITextField) {
+//        ScrollView.setContentOffset(CGPoint(x:0,y:0), animated: true)
+//    }
     
     // pulling array of sports labels into the pickerview
     // components =
@@ -105,21 +106,17 @@ class CreateGameViewController: UIViewController, UIPickerViewDataSource, UIPick
         return string
     }
     
-    // segue pickerView info to map
-    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    //        if segue.identifier == "toSportPickerMapView" {
-    //            guard let indexPath = collectionView?.indexPathsForSelectedItems?.first,
-    //                let mapVC = segue.destination as? MapViewController else {return}
-    //            let sportLabel = SportsListArray.sportsNames[indexPath.row]
-    //            mapVC.sportType = sportLabel
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        let sportName = SportsListArray.sportsNames[row]
+        self.pickerSelectedSport = sportName
+    }
     
-    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    //        if segue.identifier == "toSportPickerMapView" {
-    //            guard let indexPath = sportsListPickerView.numberOfRows(inComponent: [row]),
-    //            let mapCreateVC = segue.destination as? MapViewController else {return}
-    //            let sportLabel = SportsListArray.sportsNames[indexPath.row]
-    //            mapCreateVC.sportType = sportLabel
-    //        }
-    //    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toSportPickerMapView" {
+            let sportPickerMapVC = segue.destination as? MapViewController
+            sportPickerMapVC?.sportType = self.pickerSelectedSport
+        }
+    }
     
 }

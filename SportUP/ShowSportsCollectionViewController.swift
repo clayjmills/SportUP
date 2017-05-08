@@ -14,14 +14,22 @@ private let reuseIdentifier = "sportsListCell"
 
 class ShowSportsCollectionViewController: UICollectionViewController {
     
+    var sportsList: [Sports] = []
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.sportsList = SportsController.shared.createAllSports()
+    }
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return SportsController.shared.sportsList.count
+        return self.sportsList.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? ShowSportsCollectionViewCell else {return UICollectionViewCell()}
         
-        let sports = SportsController.shared.sportsList[indexPath.row]
+        let sports = self.sportsList[indexPath.row]
         cell.sports = sports
         return cell 
     }
@@ -30,20 +38,8 @@ class ShowSportsCollectionViewController: UICollectionViewController {
         if segue.identifier == "toMapVC" {
             guard let indexPath = collectionView?.indexPathsForSelectedItems?.first,
                 let mapVC = segue.destination as? MapViewController else {return}
-            let sportLabel = SportsListArray.sportsNames[indexPath.row]
+            let sportLabel = SportsListArray.sportsNames[indexPath.row + 1]
             mapVC.sportType = sportLabel
         }
-    }
-    
-    // NOT FINISHED!!!!!!! work on the pickerview to collectionview
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return SportsListArray.sportsNames.count
-    }
-    // grab the name out of the array and display it.
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        
-        let string = SportsListArray.sportsNames[row]
-        
-        return string
     }
 }
