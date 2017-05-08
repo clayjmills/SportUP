@@ -10,7 +10,7 @@ import Foundation
 import MapKit
 
 class PickupGame {
-    //sport(from picker), owner, time, date, location
+    //sport(from picker), owner, date, location
     var sport: String 
     var owner: String
     var date: Date

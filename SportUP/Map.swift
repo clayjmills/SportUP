@@ -21,7 +21,4 @@ struct Map {
         self.title = title
         self.subtitle = subtitle
     }
-    
-    // location, didSet -> address
-    
 }

@@ -31,10 +31,7 @@ class PickupGameController {
     
     func createPickupGame(sport: String, date: Date, location: CLLocation) {
         
- //       let pickUpGame = PickupGame(sport: sport, owner: <#T##String#>, date: date, location: location)
-        
         // Save pickUpGame to CloudKit
-        
         
     }
 

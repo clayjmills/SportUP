@@ -54,13 +54,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vmw-3t-kMg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3284" y="-3.1484257871064472"/>
+            <point key="canvasLocation" x="3284" y="-19"/>
         </scene>
         <!--Show Sports Collection View Controller-->
         <scene sceneID="YKc-8W-L3A">
             <objects>
                 <collectionViewController id="y3A-Yy-mZh" customClass="ShowSportsCollectionViewController" customModule="SportUP" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" keyboardDismissMode="onDrag" dataMode="prototypes" id="unN-Gn-Rqc">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" misplaced="YES" keyboardDismissMode="onDrag" dataMode="prototypes" id="unN-Gn-Rqc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="1" id="tph-le-ZY2">
@@ -108,7 +108,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2kg-NC-fyc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4013.5999999999999" y="-3.1484257871064472"/>
+            <point key="canvasLocation" x="4308" y="-19"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="SBa-HE-S1H">
@@ -155,6 +155,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="8xQ-Jb-R7J">
                             <connections>
                                 <action selector="saveGameButtonTapped:" destination="E8G-Xy-nWz" id="PTa-gV-G61"/>
+                                <segue destination="3Ex-LO-sby" kind="show" identifier="toHomeVC" id="y3B-dc-I0y"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -167,12 +168,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6S1-HA-VDi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4014" y="734"/>
+            <point key="canvasLocation" x="4308" y="776"/>
         </scene>
-        <!--View Controller-->
+        <!--User Sign In View Controller-->
         <scene sceneID="kkY-r5-2Kd">
             <objects>
-                <viewController id="5mK-RV-tyA" sceneMemberID="viewController">
+                <viewController id="5mK-RV-tyA" customClass="UserSignInViewController" customModule="SportUP" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="245-Hq-8C7"/>
                         <viewControllerLayoutGuide type="bottom" id="7u0-NX-SSZ"/>
@@ -181,8 +182,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J4O-uC-rLr">
+                                <rect key="frame" x="164" y="318" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="loginButtonTapped:" destination="5mK-RV-tyA" eventType="touchUpInside" id="LDo-il-7PD"/>
+                                    <segue destination="3Ex-LO-sby" kind="show" identifier="firstTimeMainVC" id="7cu-D4-Rlk"/>
+                                </connections>
+                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Create Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xbn-pj-cVe">
-                                <rect key="frame" x="67" y="223" width="239" height="30"/>
+                                <rect key="frame" x="68" y="263" width="239" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -192,10 +202,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="tPh-dk-IWG"/>
+                    <connections>
+                        <outlet property="createUsernameTextField" destination="xbn-pj-cVe" id="8qI-hx-8qe"/>
+                        <outlet property="loginButtonTapped" destination="J4O-uC-rLr" id="gHB-Yo-GjT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WlS-4I-9Yg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2773.5999999999999" y="-746.17691154422789"/>
+            <point key="canvasLocation" x="3284" y="-746"/>
         </scene>
         <!--Create Game View Controller-->
         <scene sceneID="aWZ-oK-hCP">
@@ -290,7 +304,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uh9-4T-phC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3284" y="735"/>
+            <point key="canvasLocation" x="3284" y="776"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vnu-aa-dlm">
@@ -303,33 +317,38 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="3Ex-LO-sby" kind="relationship" relationship="rootViewController" id="aDE-PD-gbm"/>
+                        <segue destination="G5P-tf-c0S" kind="show" id="SJS-vA-kur"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A0h-qp-cbn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1838" y="-3"/>
+            <point key="canvasLocation" x="1308" y="-416"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="X8A-4w-GWf">
+        <!--Loading View Controller-->
+        <scene sceneID="z4R-iv-Rvw">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3bP-uW-PNp" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6NQ-Th-F2Q">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
+                <viewController id="G5P-tf-c0S" customClass="LoadingViewController" customModule="SportUP" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Zg5-lD-oad"/>
+                        <viewControllerLayoutGuide type="bottom" id="VbX-4N-0PO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Lg1-YT-J0T">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
                     <connections>
-                        <segue destination="5mK-RV-tyA" kind="relationship" relationship="rootViewController" id="Lyz-pQ-6Qe"/>
+                        <segue destination="5mK-RV-tyA" kind="show" identifier="toSignIn" id="O0l-RT-vvs"/>
+                        <segue destination="3Ex-LO-sby" kind="show" identifier="toMainView" id="FP5-oT-n1B"/>
                     </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wpX-vz-JEP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jHp-qe-dez" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1838" y="-746"/>
+            <point key="canvasLocation" x="2095" y="-416"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="7cu-D4-Rlk"/>
         <segue reference="JQo-Jo-xjI"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -55,19 +55,21 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
     // save game button (not done)
     @IBAction func saveGameButtonTapped(_ sender: Any) {
+//        createAlert(title: "Congrats", message: "You created a game on")
+//            performSegue(withIdentifier: "toHomeVC", sender: self)
         
-  //      PickupGameController.shared.createPickupGame()
+//        PickupGameController.shared.createPickupGame(sport: <#T##String#>, date: <#T##Date#>, location: <#T##CLLocation#>)
     }
-//
-//    //Alertview when hitting save button on mapView
-//    func createAlert(title: String, message: String) {
-//        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-//        
-//        alert.addAction(UIAlertAction(title: "Done", style: UIAlertActionStyle.default, handler: { (action) in
-//            alert.dismiss(animated: true, completion: nil)
-//        }))
-//        self.present(alert, animated: true, completion: nil)
-//    }
+
+    //Alertview when hitting save button on mapView
+    func createAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        
+        alert.addAction(UIAlertAction(title: "Done", style: UIAlertActionStyle.default, handler: { (action) in
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
 
     // location delegate methods
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

@@ -22,6 +22,8 @@
 		660C26EA1E930A7A003F675C /* SportsListArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660C26E91E930A7A003F675C /* SportsListArray.swift */; };
 		660C26EE1E930B17003F675C /* ShowSportsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660C26ED1E930B17003F675C /* ShowSportsCollectionViewCell.swift */; };
 		664D5AA61EC11CA7006B9277 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664D5AA51EC11CA7006B9277 /* UserController.swift */; };
+		664D5AA81EC12CED006B9277 /* UserSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664D5AA71EC12CED006B9277 /* UserSignInViewController.swift */; };
+		664D5AAA1EC12E9F006B9277 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664D5AA91EC12E9F006B9277 /* LoadingViewController.swift */; };
 		666BFC701E956676003041BA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 666BFC6F1E956676003041BA /* CoreLocation.framework */; };
 		667146E21E9BD04F0074E8F1 /* CloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667146E11E9BD04F0074E8F1 /* CloudKitManager.swift */; };
 		667146E41E9BD0830074E8F1 /* PickupGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667146E31E9BD0830074E8F1 /* PickupGameController.swift */; };
@@ -50,6 +52,8 @@
 		660C26E91E930A7A003F675C /* SportsListArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportsListArray.swift; sourceTree = "<group>"; };
 		660C26ED1E930B17003F675C /* ShowSportsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowSportsCollectionViewCell.swift; sourceTree = "<group>"; };
 		664D5AA51EC11CA7006B9277 /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
+		664D5AA71EC12CED006B9277 /* UserSignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSignInViewController.swift; sourceTree = "<group>"; };
+		664D5AA91EC12E9F006B9277 /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		666BFC6F1E956676003041BA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		667146E11E9BD04F0074E8F1 /* CloudKitManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitManager.swift; sourceTree = "<group>"; };
 		667146E31E9BD0830074E8F1 /* PickupGameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickupGameController.swift; sourceTree = "<group>"; };
@@ -117,6 +121,8 @@
 		660C26DD1E92D1B5003F675C /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				664D5AA91EC12E9F006B9277 /* LoadingViewController.swift */,
+				664D5AA71EC12CED006B9277 /* UserSignInViewController.swift */,
 				660C26E31E92FB24003F675C /* MainViewController.swift */,
 				660C26D31E92D08A003F675C /* ShowSportsCollectionViewController.swift */,
 				660C26E11E92FA9F003F675C /* CreateGameViewController.swift */,
@@ -257,12 +263,14 @@
 				664D5AA61EC11CA7006B9277 /* UserController.swift in Sources */,
 				667146E61E9BD0D30074E8F1 /* Map.swift in Sources */,
 				66DFBAE61E96A481001B835E /* PickupGame.swift in Sources */,
+				664D5AAA1EC12E9F006B9277 /* LoadingViewController.swift in Sources */,
 				660C26D41E92D08A003F675C /* ShowSportsCollectionViewController.swift in Sources */,
 				660C26D61E92D0F9003F675C /* MapViewController.swift in Sources */,
 				660C26E21E92FA9F003F675C /* CreateGameViewController.swift in Sources */,
 				660C26B81E92CE40003F675C /* AppDelegate.swift in Sources */,
 				669A12AE1EBD2E830023BA23 /* User.swift in Sources */,
 				667146E81E9BD0EA0074E8F1 /* MapController.swift in Sources */,
+				664D5AA81EC12CED006B9277 /* UserSignInViewController.swift in Sources */,
 				660C26E61E930A21003F675C /* Sports.swift in Sources */,
 				660C26EE1E930B17003F675C /* ShowSportsCollectionViewCell.swift in Sources */,
 				660C26E81E930A48003F675C /* SportsController.swift in Sources */,

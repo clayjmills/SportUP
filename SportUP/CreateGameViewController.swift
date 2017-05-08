@@ -12,7 +12,6 @@ import CoreLocation
 
 class CreateGameViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
     
-    
     @IBOutlet weak var ScrollView: UIScrollView!
     
     @IBOutlet weak var sportsListPickerView: UIPickerView!
@@ -36,28 +35,7 @@ class CreateGameViewController: UIViewController, UIPickerViewDataSource, UIPick
     @IBAction func saveDateButtonTapped(_ sender: Any) {
         viewDateTextField.text = DateFormatter.localizedString(from: datePickerView.date, dateStyle: DateFormatter.Style.long, timeStyle: DateFormatter.Style.short)
     }
-    
-    // call the alert if owner text field is not filled in
-//    @IBAction func mapViewButtonTapped(_ sender: Any) {
-//        if ownerTextField.text == "" {
-//            createAlert(title: "Hey!", message: "Fill out Owner text field")
-//            return
-//        } else {
-//            performSegue(withIdentifier: "toSportPickerMapView", sender: self)
-//        }
-//        
-//    }
-//
-    // alert controller for map button if textfield not filled in
-//    func createAlert(title: String, message: String) {
-//        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-//        
-//        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: { (action) in
-//            alert.dismiss(animated: true, completion: nil)
-//        }))
-//        self.present(alert, animated: true, completion: nil)
-//    }
-    
+        
     func updateViews() {
         
         // button to save date picker
@@ -71,23 +49,6 @@ class CreateGameViewController: UIViewController, UIPickerViewDataSource, UIPick
         self.toMapViewButtonTapped.setTitle("", for: .normal)
         
     }
-    
-    // Keyboard
-//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//        textField.resignFirstResponder()
-//        return true
-//    }
-//    // have textfields stay on top of keyboard
-//    func textFieldDidBeginEditing(_ textField: UITextField) {
-//        if (textField == ownerTextField){
-//            ScrollView.setContentOffset(CGPoint(x: 0, y: 180), animated: true)
-//        } else if textField == toMapViewButtonTapped {
-//            self.ScrollView.setContentOffset(CGPoint(x: 0, y: 180), animated: true)
-//        }
-//    }
-//    func textFieldDidEndEditing(_ textField: UITextField) {
-//        ScrollView.setContentOffset(CGPoint(x:0,y:0), animated: true)
-//    }
     
     // pulling array of sports labels into the pickerview
     // components =

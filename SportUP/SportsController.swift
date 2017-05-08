@@ -33,7 +33,6 @@ class SportsController {
                 
                 placeHolderSports.append(sports)
             }
-            
         }
         return placeHolderSports 
     }

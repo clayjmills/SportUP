@@ -29,8 +29,6 @@ class User {
         self.username = username
         self.referenceToCKUserRecord = reference
     }
-    
-    
 }
 
 extension CKRecord {
