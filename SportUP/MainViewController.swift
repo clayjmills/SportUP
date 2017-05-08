@@ -17,7 +17,10 @@ class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.updateViews()
+        
+//        getICloudUser()
 
     }
     
@@ -33,5 +36,36 @@ class MainViewController: UIViewController {
         
         
     }
+    
+//    func getICloudUser() {
+//        
+//        CloudKitManager.shared.fetchLoggedInUserRecord { (record, error) in
+//            if let error = error {
+//                print("There was an error fetching current iCloud user: \(error.localizedDescription)")
+//            }
+//            
+//            guard let record = record else { return }
+//            CloudKitManager.shared.fetchUsername(for: record.recordID, completion: { (firstName, lastName) in
+//                guard let firstName = firstName,
+//                    let lastName = lastName else { return }
+//                print(firstName, lastName)
+//            })
+//        }
+//        
+//    }
+    
+//    func getICloudUser() {
+//        
+//        CloudKitManager.shared.fetchLoggedInUserRecord { (record, error) in
+//            if let error = error {
+//                print("There was an error fetching current iCloud user: \(error.localizedDescription)")
+//            }
+//            
+//            guard let record = record else { return }
+//            
+//            let user = User(username: <#T##String#>, referenceToCKUserRecord: <#T##CKReference?#>)
+//        }
+//
+//    }
 
 }

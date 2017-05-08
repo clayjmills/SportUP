@@ -47,7 +47,7 @@ class CreateGameViewController: UIViewController, UIPickerViewDataSource, UIPick
         
     }
     
-    // alert controller for map button if text fields are not all filled in
+    // alert controller for map button if textfield not filled in
     func createAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
         
@@ -105,7 +105,7 @@ class CreateGameViewController: UIViewController, UIPickerViewDataSource, UIPick
         return string
     }
     
-    // segue to map from pickerView
+    // segue pickerView info to map
     //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     //        if segue.identifier == "toSportPickerMapView" {
     //            guard let indexPath = collectionView?.indexPathsForSelectedItems?.first,

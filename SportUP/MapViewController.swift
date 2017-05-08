@@ -27,6 +27,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     var sportType: String?
     var owner: String?
     var date: Date?
+    var annotations: [MKPointAnnotation] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,11 +53,20 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         map.addGestureRecognizer(longPressGestureRecognizer)
         
     }
-    //save game button
-    @IBAction func saveGameButtonTapped(_ sender: Any) {
-    }
-    
-    
+    //save game button (not done)
+//    @IBAction func saveGameButtonTapped(_ sender: Any) {
+//    }
+//    
+//    //Alertview when hitting save button on mapView
+//    func createAlert(title: String, message: String) {
+//        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+//        
+//        alert.addAction(UIAlertAction(title: "Done", style: UIAlertActionStyle.default, handler: { (action) in
+//            alert.dismiss(animated: true, completion: nil)
+//        }))
+//        self.present(alert, animated: true, completion: nil)
+//    }
+
     // location delegate methods
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
@@ -65,7 +75,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         // center of the location
         let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
         // map zooms to the region we give it
-        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
+        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02))
         // make sure mapview zooms into the region (animation is for the zoom)
         self.map.setRegion(region, animated: true)
         self.locationManager.stopUpdatingLocation()
@@ -81,6 +91,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             {
                 if let place = placemark?[0] {
                     self.pinLocationLabel.text = place.name
+                    self.pinLocationLabel.text = place.administrativeArea
+                    self.pinLocationLabel.text = place.locality
+                    self.pinLocationLabel.text = place.thoroughfare
                 }
             }
         }
@@ -88,7 +101,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     // add the long press gesture recognizer for pin drop
     func addPinForNewSport(press: UILongPressGestureRecognizer) {
+        
+
         if press.state == .began {
+            map.removeAnnotations(annotations)
+            self.annotations = []
             //where you touch
             let point = press.location(in: map)
             // get the coordinates
@@ -96,11 +113,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             //give location annotation
             let annotation = MKPointAnnotation()
             annotation.coordinate = coordinates
-            // fill in the annotation
             annotation.title = "owner"
-            annotation.subtitle = "self.viewDateTextField.text"
+            annotation.subtitle = "city"
+            self.annotations.append(annotation)
             //add the annotation
-            map.addAnnotation(annotation)
+            map.addAnnotations(self.annotations)
             
             
             let location = CLLocation(latitude: annotation.coordinate.latitude, longitude: annotation.coordinate.longitude)
@@ -115,14 +132,23 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 
                 guard let placemark = placemarks?.first else { return }
                 
-                if let name = placemark.addressDictionary?["Name"] as? String {
+                if let name = placemark.addressDictionary?["Name"] as? String,
+                    let thoroughfare = placemark.addressDictionary?["City"] as? String {
                     self.dropPinLocationLabel.text = name
+                    self.dropPinLocationLabel.text = thoroughfare
+                    annotation.title = name
+                    annotation.subtitle = thoroughfare
                 }
             }
         }
     }
     
-    // set the colors of the pins (blue for user, red for pickup games)
+    // set the colors of the pins (blue for user, red for pickup games), fill the annotation with needed info
+    
+    //    annotation.title = "owner"
+    //    annotation.subtitle = "self.viewDateTextField.text"
+    
+    
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         //make user location (pin) blue
         let pin = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "pin")
@@ -136,7 +162,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         }
         return pin
     }
-    
 }
 
 ////create a custom class
@@ -145,12 +170,14 @@ class CustomAnnotation: NSObject, MKAnnotation {
     var latitude: Double
     var longitude: Double
     var name: String
+    var thoroughfare: String
     
     //memberwise initializer
-    init(latitude: Double, longitude: Double, name: String) {
+    init(latitude: Double, longitude: Double, name: String, thoroughfare: String) {
         self.latitude = latitude
         self.longitude = longitude
         self.name = name
+        self.thoroughfare = thoroughfare
     }
     //return the coordinate made by latitude and longitude
     var coordinate: CLLocationCoordinate2D {
@@ -159,6 +186,9 @@ class CustomAnnotation: NSObject, MKAnnotation {
     }
     var title: String? {
         return name
+    }
+    var subtitle: String? {
+        return thoroughfare
     }
 }
 
