@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BDf-Ql-DNj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GFq-9g-5f0">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -108,7 +108,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2kg-NC-fyc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4308" y="-19"/>
+            <point key="canvasLocation" x="5247.1999999999998" y="-19.340329835082461"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="SBa-HE-S1H">
@@ -155,7 +155,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="8xQ-Jb-R7J">
                             <connections>
                                 <action selector="saveGameButtonTapped:" destination="E8G-Xy-nWz" id="PTa-gV-G61"/>
-                                <segue destination="3Ex-LO-sby" kind="show" identifier="toHomeVC" id="y3B-dc-I0y"/>
+                                <segue destination="3Ex-LO-sby" kind="show" id="7Ns-xH-xyP"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -188,7 +188,7 @@
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="loginButtonTapped:" destination="5mK-RV-tyA" eventType="touchUpInside" id="LDo-il-7PD"/>
-                                    <segue destination="3Ex-LO-sby" kind="show" identifier="firstTimeMainVC" id="7cu-D4-Rlk"/>
+                                    <segue destination="GFq-9g-5f0" kind="show" identifier="firstTimeMainVC" id="7cu-D4-Rlk"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Create Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xbn-pj-cVe">
@@ -209,7 +209,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WlS-4I-9Yg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3284" y="-746"/>
+            <point key="canvasLocation" x="3284" y="-1090"/>
         </scene>
         <!--Create Game View Controller-->
         <scene sceneID="aWZ-oK-hCP">
@@ -306,24 +306,6 @@
             </objects>
             <point key="canvasLocation" x="3284" y="776"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="vnu-aa-dlm">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BDf-Ql-DNj" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oVW-TO-fzZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="G5P-tf-c0S" kind="show" id="SJS-vA-kur"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="A0h-qp-cbn" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1308" y="-416"/>
-        </scene>
         <!--Loading View Controller-->
         <scene sceneID="z4R-iv-Rvw">
             <objects>
@@ -335,20 +317,48 @@
                     <view key="view" contentMode="scaleToFill" id="Lg1-YT-J0T">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SportUPHD" translatesAutoresizingMaskIntoConstraints="NO" id="u55-7G-5Y2">
+                                <rect key="frame" x="65" y="211" width="245" height="245"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <segue destination="5mK-RV-tyA" kind="show" identifier="toSignIn" id="O0l-RT-vvs"/>
-                        <segue destination="3Ex-LO-sby" kind="show" identifier="toMainView" id="FP5-oT-n1B"/>
+                        <segue destination="GFq-9g-5f0" kind="show" identifier="toMainView" id="FP5-oT-n1B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jHp-qe-dez" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2095" y="-416"/>
+            <point key="canvasLocation" x="2058" y="-1089"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="9vv-C5-BXs">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GFq-9g-5f0" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qb9-EE-XeB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="3Ex-LO-sby" kind="relationship" relationship="rootViewController" id="HSp-Ik-PkP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TMQ-Bn-NbB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2430" y="-19"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="SportUPHD" width="512" height="512"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7cu-D4-Rlk"/>
+        <segue reference="7Ns-xH-xyP"/>
         <segue reference="JQo-Jo-xjI"/>
+        <segue reference="7cu-D4-Rlk"/>
     </inferredMetricsTieBreakers>
 </document>
