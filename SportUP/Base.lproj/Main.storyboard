@@ -108,7 +108,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2kg-NC-fyc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5247.1999999999998" y="-19.340329835082461"/>
+            <point key="canvasLocation" x="4308" y="-19"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="SBa-HE-S1H">
@@ -155,7 +155,6 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="8xQ-Jb-R7J">
                             <connections>
                                 <action selector="saveGameButtonTapped:" destination="E8G-Xy-nWz" id="PTa-gV-G61"/>
-                                <segue destination="3Ex-LO-sby" kind="show" id="7Ns-xH-xyP"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -188,7 +187,6 @@
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="loginButtonTapped:" destination="5mK-RV-tyA" eventType="touchUpInside" id="LDo-il-7PD"/>
-                                    <segue destination="GFq-9g-5f0" kind="show" identifier="firstTimeMainVC" id="7cu-D4-Rlk"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Create Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xbn-pj-cVe">
@@ -327,7 +325,6 @@
                     </view>
                     <connections>
                         <segue destination="5mK-RV-tyA" kind="show" identifier="toSignIn" id="O0l-RT-vvs"/>
-                        <segue destination="GFq-9g-5f0" kind="show" identifier="toMainView" id="FP5-oT-n1B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jHp-qe-dez" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -357,8 +354,6 @@
         <image name="SportUPHD" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7Ns-xH-xyP"/>
-        <segue reference="JQo-Jo-xjI"/>
-        <segue reference="7cu-D4-Rlk"/>
+        <segue reference="Ha1-iy-8y1"/>
     </inferredMetricsTieBreakers>
 </document>

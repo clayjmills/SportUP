@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CloudKit
 import CoreLocation
 import MapKit
 
@@ -28,7 +29,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     var owner: String?
     var date: Date?
     var annotations: [MKPointAnnotation] = []
-
+    var addPinForNewSport: CLLocation?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -47,36 +49,45 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         sportLabel.text = sportType
         
+        
         //long press gesture time
         let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(addPinForNewSport(press:)))
         longPressGestureRecognizer.minimumPressDuration = 0.5
         map.addGestureRecognizer(longPressGestureRecognizer)
         
     }
-    // save game button (not done)
+    // save game button. add alert that says congrats, then hit save button on alert to save
     @IBAction func saveGameButtonTapped(_ sender: Any) {
-//        createAlert(title: "Congrats", message: "You created a game on")
-//            performSegue(withIdentifier: "toHomeVC", sender: self)
-        
-//        PickupGameController.shared.createPickupGame(sport: <#T##String#>, date: <#T##Date#>, location: <#T##CLLocation#>)
+        if addPinForNewSport != nil {
+            let database = CKContainer.default().publicCloudDatabase
+            let saveGameAlert = UIAlertController(title: "Congrats", message: "Give your game a title", preferredStyle: .alert)
+            saveGameAlert.addTextField(configurationHandler: { (textField:UITextField) in
+                textField.placeholder = "game title"
+            })
+            saveGameAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action:UIAlertAction) in
+                if let textFieldContent = saveGameAlert.textFields?.first?.text, saveGameAlert.textFields?.first?.text != "" {
+                    let newGame = CKRecord(recordType: "")
+                    newGame["title"] = textFieldContent as CKRecordValue
+                    newGame["subtitle"] = self.addPinForNewSport!
+                    
+                    database.save(newGame, completionHandler: { (record:CKRecord?, error:NSError?) in
+                        if error != nil {
+                            print(error?.localizedDescription)
+                        }
+                    } as! (CKRecord?, Error?) -> Void)
+                }
+            }))
+            saveGameAlert.addAction(UIAlertAction(title: "Save", style: .default, handler: nil))
+            self.present(saveGameAlert, animated: true, completion: nil)
+        }
     }
-
-    //Alertview when hitting save button on mapView
-    func createAlert(title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-        
-        alert.addAction(UIAlertAction(title: "Done", style: UIAlertActionStyle.default, handler: { (action) in
-            alert.dismiss(animated: true, completion: nil)
-        }))
-        self.present(alert, animated: true, completion: nil)
-    }
-
+    
     // location delegate methods
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         // passes in didupdatelocations
         let location = locations[0]
-        // center of the location
+        // center of the location at user current loation
         let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
         // map zooms to the region we give it
         let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02))
@@ -103,7 +114,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     // add the long press gesture recognizer for pin drop
     func addPinForNewSport(press: UILongPressGestureRecognizer) {
-
+        
         if press.state == .began {
             map.removeAnnotations(annotations)
             self.annotations = []
@@ -144,7 +155,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
     
     // set the colors of the pins (blue for user, red for pickup games), fill the annotation with needed info
-  
+    
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         //make user location (pin) blue
         let pin = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "pin")
@@ -188,3 +199,38 @@ class CustomAnnotation: NSObject, MKAnnotation {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// line 83
+//
+//        createAlert(title: "Congrats", message: "You created a game on")
+//            performSegue(withIdentifier: "toHomeVC", sender: self)
+
+//        PickupGameController.shared.createPickupGame(sport: <#T##String#>, date: <#T##Date#>, location: <#T##CLLocation#>)
+
+//Alertview when hitting save button on mapView
+//    func createAlert(title: String, message: String) {
+//        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+//
+//        alert.addAction(UIAlertAction(title: "Done", style: UIAlertActionStyle.default, handler: { (action) in
+//            alert.dismiss(animated: true, completion: nil)
+//        }))
+//        self.present(alert, animated: true, completion: nil)
+//    }
