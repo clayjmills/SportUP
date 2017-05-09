@@ -13,8 +13,7 @@ import MapKit
 
 
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UIPickerViewDelegate {
-    
-    
+        
     @IBOutlet weak var sportLabel: UILabel!
     @IBOutlet weak var map: MKMapView!
     
@@ -56,119 +55,114 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         map.addGestureRecognizer(longPressGestureRecognizer)
         
     }
-    // save game button. add alert that says congrats, then hit save button on alert to save
+    // save game button. add alert that says "congrats on making game"
     @IBAction func saveGameButtonTapped(_ sender: Any) {
-        if addPinForNewSport != nil {
-            let database = CKContainer.default().publicCloudDatabase
-            let saveGameAlert = UIAlertController(title: "Congrats", message: "Give your game a title", preferredStyle: .alert)
-            saveGameAlert.addTextField(configurationHandler: { (textField:UITextField) in
-                textField.placeholder = "game title"
-            })
-            saveGameAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action:UIAlertAction) in
-                if let textFieldContent = saveGameAlert.textFields?.first?.text, saveGameAlert.textFields?.first?.text != "" {
-                    let newGame = CKRecord(recordType: "")
-                    newGame["title"] = textFieldContent as CKRecordValue
-                    newGame["subtitle"] = self.addPinForNewSport!
-                    
-                    database.save(newGame, completionHandler: { (record:CKRecord?, error:NSError?) in
-                        if error != nil {
-                            print(error?.localizedDescription)
-                        }
-                    } as! (CKRecord?, Error?) -> Void)
-                }
-            }))
-            saveGameAlert.addAction(UIAlertAction(title: "Save", style: .default, handler: nil))
-            self.present(saveGameAlert, animated: true, completion: nil)
-        }
+        
+        guard let sport = self.sportType,
+            let date = self.date,
+            let location = self.addPinForNewSport
+            else { return }
+        
+        let owner = "test"
+        
+        let newGame = PickupGame(sport: sport, owner: owner, date: date, location: location)
+        
+         
+        let alertController = UIAlertController(title: "Your game has been saved", message: "Go play", preferredStyle: .alert)
+        self.present(alertController, animated: true, completion: nil)
+        let doneAction = UIAlertAction(title: "Done", style: .default) { (action:UIAlertAction)
+            in }
+        alertController.addAction(doneAction)
     }
     
-    // location delegate methods
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
-        // passes in didupdatelocations
-        let location = locations[0]
-        // center of the location at user current loation
-        let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-        // map zooms to the region we give it
-        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02))
-        // make sure mapview zooms into the region (animation is for the zoom)
-        self.map.setRegion(region, animated: true)
-        self.locationManager.stopUpdatingLocation()
-        self.map.showsUserLocation = true
-        
-        //reverse geocoding to get address for locations
-        CLGeocoder().reverseGeocodeLocation(location) { (placemark, error) in
-            if error != nil
-            {
-                print ("There was an error")
-            }
-            else
-            {
-                if let place = placemark?[0] {
-                    self.pinLocationLabel.text = place.name
-                    self.pinLocationLabel.text = place.thoroughfare
-                }
+    
+   // location delegate methods
+func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    
+    // passes in didupdatelocations
+    let location = locations[0]
+    // center of the location at user current loation
+    let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+    // map zooms to the region we give it
+    let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02))
+    // make sure mapview zooms into the region (animation is for the zoom)
+    self.map.setRegion(region, animated: true)
+    self.locationManager.stopUpdatingLocation()
+    self.map.showsUserLocation = true
+    
+    //reverse geocoding to get address for locations
+    CLGeocoder().reverseGeocodeLocation(location) { (placemark, error) in
+        if error != nil
+        {
+            print ("There was an error")
+        }
+        else
+        {
+            if let place = placemark?[0] {
+                self.pinLocationLabel.text = place.name
+                self.pinLocationLabel.text = place.thoroughfare
             }
         }
     }
+}
+
+// add the long press gesture recognizer for pin drop
+func addPinForNewSport(press: UILongPressGestureRecognizer) {
     
-    // add the long press gesture recognizer for pin drop
-    func addPinForNewSport(press: UILongPressGestureRecognizer) {
+    if press.state == .began {
+        map.removeAnnotations(annotations)
+        self.annotations = []
+        //where you touch
+        let point = press.location(in: map)
+        // get the coordinates
+        let coordinates = map.convert(point, toCoordinateFrom: map)
+        //give location annotation
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = coordinates
+        annotation.title = "owner"
+        annotation.subtitle = "city"
+        self.annotations.append(annotation)
+        //add the annotation
+        map.addAnnotations(self.annotations)
+        // get location
+        let location = CLLocation(latitude: annotation.coordinate.latitude, longitude: annotation.coordinate.longitude)
         
-        if press.state == .began {
-            map.removeAnnotations(annotations)
-            self.annotations = []
-            //where you touch
-            let point = press.location(in: map)
-            // get the coordinates
-            let coordinates = map.convert(point, toCoordinateFrom: map)
-            //give location annotation
-            let annotation = MKPointAnnotation()
-            annotation.coordinate = coordinates
-            annotation.title = "owner"
-            annotation.subtitle = "city"
-            self.annotations.append(annotation)
-            //add the annotation
-            map.addAnnotations(self.annotations)
-            // get location
-            let location = CLLocation(latitude: annotation.coordinate.latitude, longitude: annotation.coordinate.longitude)
+        //reverse geocoding to get address for droppedPin
+        CLGeocoder().reverseGeocodeLocation(location) { (placemarks, error) in
+            if let error = error
+            {
+                print ("There was an error: \(error.localizedDescription)")
+                return
+            }
             
-            //reverse geocoding to get address for droppedPin
-            CLGeocoder().reverseGeocodeLocation(location) { (placemarks, error) in
-                if let error = error
-                {
-                    print ("There was an error: \(error.localizedDescription)")
-                    return
-                }
-                
-                guard let placemark = placemarks?.first else { return }
-                
-                if let name = placemark.addressDictionary?["Name"] as? String,
-                    let thoroughfare = placemark.addressDictionary?["City"] as? String {
-                    self.dropPinLocationLabel.text = name
-                    self.dropPinLocationLabel.text = thoroughfare
-                    annotation.title = name
-                    annotation.subtitle = thoroughfare
-                }
+            guard let placemark = placemarks?.first else { return }
+            
+            if let name = placemark.addressDictionary?["Name"] as? String,
+                let thoroughfare = placemark.addressDictionary?["City"] as? String {
+                self.dropPinLocationLabel.text = name
+                self.dropPinLocationLabel.text = thoroughfare
+                annotation.title = name
+                annotation.subtitle = thoroughfare
             }
         }
     }
-    
-    // set the colors of the pins (blue for user, red for pickup games), fill the annotation with needed info
-    
-    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        //make user location (pin) blue
-        let pin = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "pin")
-        pin.canShowCallout = true
-        pin.pinTintColor = UIColor.blue
-        //make color of dropped pins red
-        if let title = annotation.title {
-            if title == "owner" {
-                pin.pinTintColor = UIColor.red
-            }
+}
+
+// set the colors of the pins (blue for user, red for pickup games), fill the annotation with needed info
+
+func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+    //make user location (pin) blue
+    let pin = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "pin")
+    pin.canShowCallout = true
+    pin.pinTintColor = UIColor.blue
+    //make color of dropped pins red
+    if let title = annotation.title {
+        if title == "owner" {
+            pin.pinTintColor = UIColor.red
         }
-        return pin
     }
+    return pin
+}
 }
 ////create a custom class
 class CustomAnnotation: NSObject, MKAnnotation {

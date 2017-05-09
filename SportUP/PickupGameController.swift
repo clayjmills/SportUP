@@ -11,6 +11,9 @@ import CloudKit
 
 class PickupGameController {
     static let shared = PickupGameController()
+    static let publicDatabase = CKContainer.default().publicCloudDatabase
+    let cloudkitManager = CloudKitManager()
+    
     
     func createAllSports() -> [Sports] {
         
@@ -29,9 +32,12 @@ class PickupGameController {
         return placeHolderSports
     }
     
-    func createPickupGame(sport: String, date: Date, location: CLLocation) {
+    func create(pickupGame: PickupGame) {
         
-        // Save pickUpGame to CloudKit
+//        let ckRecord = pickupGame.
+//       
+//        // Save pickUpGame to CloudKit
+//        cloudkitManager.publicDatabase.save(<#T##record: CKRecord##CKRecord#>, completionHandler: <#T##(CKRecord?, Error?) -> Void#>) 
         
     }
 
