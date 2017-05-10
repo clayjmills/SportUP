@@ -21,14 +21,14 @@ class PickupGameController {
 //        loadFromPersistentStorage()
 //    }
     
+//    private func loadFromPersistentStorage() {
+//
+//    }
+    
     func create(pickupGame: PickupGame) {
         
-//        saveToPersistentStorage()
     }
     
-//    private func loadFromPersistentStorage() {
-//        
-//    }
     
     func savePickUpGameToCloudKit(pickUpGame: PickupGame, completion: @escaping(_ success: Bool) -> Void) {
         

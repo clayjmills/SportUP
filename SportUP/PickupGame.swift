@@ -59,13 +59,3 @@ class PickupGame {
         return record
     }
 }
-
-//func ==(lhs: PickupGame, rhs: PickupGame) -> Bool {
-//    if lhs.sport != rhs.sport {return false}
-//    if lhs.owner != rhs.owner {return false}
-//    if lhs.date != rhs.date {return false}
-//    if lhs.location != rhs.location {return false}
-//    
-//    return true
-//}
-

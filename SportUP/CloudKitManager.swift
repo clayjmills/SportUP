@@ -54,7 +54,8 @@ class CloudKitManager {
             })
         }
     }
-    
+ 
+// Not using
 //    func fetchLoggedInUserRecord(_ completion: ((_ record: CKRecord?, _ error: Error? ) -> Void)?) {
 //        
 //        CKContainer.default().fetchUserRecordID { (recordID, error) in
