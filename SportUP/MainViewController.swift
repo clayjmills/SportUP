@@ -14,14 +14,12 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var createPickupGameButtonTapped: UIButton!
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.updateViews()
         
-//        getICloudUser()
-
     }
     
     func updateViews() {
@@ -34,38 +32,5 @@ class MainViewController: UIViewController {
         self.createPickupGameButtonTapped.layer.cornerRadius = 16
         self.createPickupGameButtonTapped.setTitle("Create Pickup Game", for: .normal)
         
-        
     }
-    
-//    func getICloudUser() {
-//        
-//        CloudKitManager.shared.fetchLoggedInUserRecord { (record, error) in
-//            if let error = error {
-//                print("There was an error fetching current iCloud user: \(error.localizedDescription)")
-//            }
-//            
-//            guard let record = record else { return }
-//            CloudKitManager.shared.fetchUsername(for: record.recordID, completion: { (firstName, lastName) in
-//                guard let firstName = firstName,
-//                    let lastName = lastName else { return }
-//                print(firstName, lastName)
-//            })
-//        }
-//        
-//    }
-    
-//    func getICloudUser() {
-//        
-//        CloudKitManager.shared.fetchLoggedInUserRecord { (record, error) in
-//            if let error = error {
-//                print("There was an error fetching current iCloud user: \(error.localizedDescription)")
-//            }
-//            
-//            guard let record = record else { return }
-//            
-//            let user = User(username: <#T##String#>, referenceToCKUserRecord: <#T##CKReference?#>)
-//        }
-//
-//    }
-
 }

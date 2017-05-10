@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,19 +22,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PineAPPle, LLC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qCX-fw-7kR">
-                                <rect key="frame" x="129" y="626" width="117" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PineAPPle, LLC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qCX-fw-7kR">
+                                <rect key="frame" x="129" y="637" width="117" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="iTunesArtwork@1x" translatesAutoresizingMaskIntoConstraints="NO" id="I1g-ks-N1g">
-                                <rect key="frame" x="65" y="211" width="245" height="245"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iTunesArtwork@1x" translatesAutoresizingMaskIntoConstraints="NO" id="I1g-ks-N1g">
+                                <rect key="frame" x="65" y="211" width="245" height="256"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.51922148466110229" green="0.82381212711334229" blue="0.9761921763420105" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="I1g-ks-N1g" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="191" id="9j2-vJ-m32"/>
+                            <constraint firstItem="I1g-ks-N1g" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="49" id="IfN-gl-fNm"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="qCX-fw-7kR" secondAttribute="bottom" constant="9" id="JLL-15-ODi"/>
+                            <constraint firstItem="qCX-fw-7kR" firstAttribute="top" secondItem="I1g-ks-N1g" secondAttribute="bottom" constant="170" id="M0J-uj-t35"/>
+                            <constraint firstItem="qCX-fw-7kR" firstAttribute="top" secondItem="I1g-ks-N1g" secondAttribute="bottom" constant="170" id="NKT-1c-JqK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="I1g-ks-N1g" secondAttribute="trailing" constant="49" id="hXg-Bo-Mbx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qCX-fw-7kR" secondAttribute="trailing" constant="113" id="m3h-h7-4ML"/>
+                            <constraint firstItem="qCX-fw-7kR" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="113" id="po9-6r-krL"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
