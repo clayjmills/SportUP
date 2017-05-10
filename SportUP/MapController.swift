@@ -10,6 +10,5 @@ import Foundation
 
 class MapController {
     
-    //show selected sport in the label 
     
 }

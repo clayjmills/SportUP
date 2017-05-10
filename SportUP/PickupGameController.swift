@@ -10,6 +10,8 @@ import Foundation
 import CloudKit
 
 class PickupGameController {
+    
+    static let pickupGameKey = "pickupGame"
     static let shared = PickupGameController()
     
     static let privateDataBase = CKContainer.default().privateCloudDatabase
@@ -17,31 +19,33 @@ class PickupGameController {
     
     let cloudkitManager = CloudKitManager()
     
-    
-    func createAllSports() -> [Sports] {
-        
-        var placeHolderSports: [Sports] = []
-        
-        for sportsNames in SportsListArray.sportsNames {
-            
-            guard let index = SportsListArray.sportsNames.index(of: sportsNames) else {return []}
-            
-            let imageNames = SportsListArray.imageName[index]
-            
-            let sports = Sports(sportsName: sportsNames, imageName: imageNames)
-            
-            placeHolderSports.append(sports)
-        }
-        return placeHolderSports
-    }
+//    init() {
+//        loadFromPersistentStorage()
+//    }
     
     func create(pickupGame: PickupGame) {
         
-//        let ckRecord = pickupGame.
-//       
-//        // Save pickUpGame to CloudKit
-//        cloudkitManager.publicDatabase.save(<#T##record: CKRecord##CKRecord#>, completionHandler: <#T##(CKRecord?, Error?) -> Void#>) 
-        
+//        saveToPersistentStorage()
     }
-
+    
+//    private func loadFromPersistentStorage() {
+//        
+//    }
+    
+//    private func saveToPersistentStorage() {
+//        
+//        let pickupGameRecords = self.pickupGame.map({$0.cloudKitRecord})
+//        
+//        cloudkitManager.saveRecord(records: pickupGameRecords, perRecordcompletion: nil) { (records, error) in
+//            if let error = error {
+//                print(error.localizedDescription)
+//                return
+//            } else {
+//                print("Saved to CloudKit")
+//            }
+//        }
+//    }
+//    var pickupGame = [PickupGame]() {
+//        
+//    }
 }
