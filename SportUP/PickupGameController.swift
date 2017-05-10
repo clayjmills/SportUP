@@ -11,7 +11,10 @@ import CloudKit
 
 class PickupGameController {
     static let shared = PickupGameController()
+    
+    static let privateDataBase = CKContainer.default().privateCloudDatabase
     static let publicDatabase = CKContainer.default().publicCloudDatabase
+    
     let cloudkitManager = CloudKitManager()
     
     

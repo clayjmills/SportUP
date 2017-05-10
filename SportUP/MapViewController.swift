@@ -25,7 +25,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     var currentLocation: CustomAnnotation?
     var shown: Bool = false
     var sportType: String?
-    var owner: String?
+    var user: String?
     var date: Date?
     var annotations: [MKPointAnnotation] = []
     var addPinForNewSport: CLLocation?
@@ -58,21 +58,21 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     // save game button. add alert that says "congrats on making game"
     @IBAction func saveGameButtonTapped(_ sender: Any) {
         
-        guard let sport = self.sportType,
-            let date = self.date,
-            let location = self.addPinForNewSport
-            else { return }
-        
-        let owner = "test"
-        
-        let newGame = PickupGame(sport: sport, owner: owner, date: date, location: location)
-        
-         
         let alertController = UIAlertController(title: "Your game has been saved", message: "Go play", preferredStyle: .alert)
         self.present(alertController, animated: true, completion: nil)
         let doneAction = UIAlertAction(title: "Done", style: .default) { (action:UIAlertAction)
             in }
         alertController.addAction(doneAction)
+        
+        guard let sport = self.sportType,
+            let date = self.date,
+            let user = self.user,
+            let location = self.addPinForNewSport
+            else { return }
+        
+        let newGame = PickupGame(sport: sport, user: user, date: date, location: location)
+        
+        
     }
     
     
