@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GFq-9g-5f0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="G5P-tf-c0S">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -187,46 +187,6 @@
             </objects>
             <point key="canvasLocation" x="4308" y="775.86206896551732"/>
         </scene>
-        <!--User Sign In View Controller-->
-        <scene sceneID="kkY-r5-2Kd">
-            <objects>
-                <viewController id="5mK-RV-tyA" customClass="UserSignInViewController" customModule="SportUP" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="245-Hq-8C7"/>
-                        <viewControllerLayoutGuide type="bottom" id="7u0-NX-SSZ"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="oZK-7i-KCg">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J4O-uC-rLr">
-                                <rect key="frame" x="164" y="318" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Login"/>
-                                <connections>
-                                    <action selector="loginButtonTapped:" destination="5mK-RV-tyA" eventType="touchUpInside" id="LDo-il-7PD"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Create Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xbn-pj-cVe">
-                                <rect key="frame" x="68" y="263" width="239" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="tPh-dk-IWG"/>
-                    <connections>
-                        <outlet property="createUsernameTextField" destination="xbn-pj-cVe" id="8qI-hx-8qe"/>
-                        <outlet property="loginButtonTapped" destination="J4O-uC-rLr" id="gHB-Yo-GjT"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WlS-4I-9Yg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3284" y="-1090"/>
-        </scene>
         <!--Create Game View Controller-->
         <scene sceneID="aWZ-oK-hCP">
             <objects>
@@ -342,12 +302,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <segue destination="5mK-RV-tyA" kind="show" identifier="toSignIn" id="O0l-RT-vvs"/>
+                        <segue destination="GFq-9g-5f0" kind="show" identifier="toMainView" id="fe1-mL-a2B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jHp-qe-dez" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2058" y="-1089"/>
+            <point key="canvasLocation" x="1415" y="-19"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9vv-C5-BXs">

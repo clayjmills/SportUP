@@ -17,8 +17,6 @@ class PickupGameController {
     static let privateDataBase = CKContainer.default().privateCloudDatabase
     static let publicDatabase = CKContainer.default().publicCloudDatabase
     
-    let cloudkitManager = CloudKitManager()
-    
 //    init() {
 //        loadFromPersistentStorage()
 //    }
@@ -32,20 +30,20 @@ class PickupGameController {
 //        
 //    }
     
-//    private func saveToPersistentStorage() {
-//        
-//        let pickupGameRecords = self.pickupGame.map({$0.cloudKitRecord})
-//        
-//        cloudkitManager.saveRecord(records: pickupGameRecords, perRecordcompletion: nil) { (records, error) in
-//            if let error = error {
-//                print(error.localizedDescription)
-//                return
-//            } else {
-//                print("Saved to CloudKit")
-//            }
-//        }
-//    }
-//    var pickupGame = [PickupGame]() {
-//        
-//    }
+    func savePickUpGameToCloudKit(pickUpGame: PickupGame, completion: @escaping(_ success: Bool) -> Void) {
+        
+        let record = pickUpGame.cloudKitRecord
+        
+        CloudKitManager.shared.saveRecord(record) { (record, error) in
+            
+            if let error = error {
+                print("There was an error saving the record to CloudKit: \(error.localizedDescription)")
+                completion(false)
+                return
+            } else {
+                completion(true)
+                print("Saved to CloudKit")
+            }
+        }
+    }
 }

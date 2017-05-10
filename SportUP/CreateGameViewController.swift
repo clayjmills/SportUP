@@ -22,6 +22,7 @@ class CreateGameViewController: UIViewController, UIPickerViewDataSource, UIPick
     @IBOutlet weak var toMapViewButtonTapped: UIButton!
     
     var pickerSelectedSport: String = ""
+    var date: Date?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +34,12 @@ class CreateGameViewController: UIViewController, UIPickerViewDataSource, UIPick
     }
     // save datepicker info to textfield
     @IBAction func saveDateButtonTapped(_ sender: Any) {
-        viewDateTextField.text = DateFormatter.localizedString(from: datePickerView.date, dateStyle: DateFormatter.Style.long, timeStyle: DateFormatter.Style.short)
+        
+        self.date = datePickerView.date
+        guard let date = self.date else { return }
+        
+        let dateString = DateFormatter.localizedString(from: date, dateStyle: DateFormatter.Style.long, timeStyle: DateFormatter.Style.short)
+        viewDateTextField.text = dateString
     }
         
     func updateViews() {
@@ -77,6 +83,7 @@ class CreateGameViewController: UIViewController, UIPickerViewDataSource, UIPick
         if segue.identifier == "toSportPickerMapView" {
             let sportPickerMapVC = segue.destination as? MapViewController
             sportPickerMapVC?.sportType = self.pickerSelectedSport
+            sportPickerMapVC?.date = date
         }
     }
     

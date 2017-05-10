@@ -23,11 +23,12 @@ class User {
     
     init?(ckrecord: CKRecord) {
         guard let username = ckrecord["username"] as? String,
-            let reference = ckrecord["referenceToCKUserRecord"] as? CKReference
+            let reference = ckrecord["referenceToCkUserRecord"] as? CKReference
             else { return nil }
         
         self.username = username
         self.referenceToCKUserRecord = reference
+        self.recordID = ckrecord.recordID
     }
 }
 
@@ -36,5 +37,8 @@ extension CKRecord {
     convenience init(user: User) {
         let recordID = user.recordID ?? CKRecordID(recordName: UUID().uuidString)
         self.init(recordType: "User", recordID: recordID)
+        
+        self.setValue(user.username, forKey: "username")
+        self.setValue(user.referenceToCKUserRecord, forKey: "referenceToCkUserRecord")
     }
 }

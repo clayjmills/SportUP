@@ -7,7 +7,39 @@
 //
 
 import Foundation
+import CloudKit
 
 class UserController {
     
+    static let shared = UserController()
+    
+    var currentUser: User?
+    var newUserUsername: String?
+    
+    func fetchLoggedInUser(completion: @escaping(Bool) -> Void) {
+        
+        CloudKitManager.shared.fetchCurrentUser { (currentUser, appleUserRef) in
+            
+            if currentUser != nil {
+                self.currentUser = currentUser
+                completion(true)
+            } else {
+                guard let appleUserRef = appleUserRef,
+                    let newUserName = self.newUserUsername
+                    else { completion(false); return }
+                
+                let user = User(username: newUserName, referenceToCKUserRecord: appleUserRef)
+                let record = CKRecord(user: user)
+                CloudKitManager.shared.saveRecord(record, completion: { (record, error) in
+                    if let error = error {
+                        print(error.localizedDescription)
+                        completion(false)
+                    }
+                    user.recordID = record?.recordID
+                    self.currentUser = user
+                    completion(true)
+                })
+            }
+        }
+    }
 }

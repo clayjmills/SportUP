@@ -28,22 +28,49 @@ class CloudKitManager {
     
     // MARK: - User Info Discovery
     
-    func fetchLoggedInUserRecord(_ completion: ((_ record: CKRecord?, _ error: Error? ) -> Void)?) {
+    func fetchCurrentUser(completion: @escaping (User?, CKReference?) -> Void) {
+        // Fetch default Apple 'Users' recordID
         
-        CKContainer.default().fetchUserRecordID { (recordID, error) in
+        CKContainer.default().fetchUserRecordID { (appleUserRecordID, error) in
             
-            if let error = error,
-                let completion = completion {
-                completion(nil, error)
-            }
+            if let error = error { print(error.localizedDescription) }
             
-            if let recordID = recordID,
-                let completion = completion {
+            guard let appleUserRecordID = appleUserRecordID else { return }
+            
+            // Initialize a CKReference with that recordID so that we can fetch OUR real User record
+            let appleUserReference = CKReference(recordID: appleUserRecordID, action: .deleteSelf)
+            
+            // Create a predicate with that reference that will go through all of the Users and FILTER through them and return us the one that has the matching reference.
+            let predicate = NSPredicate(format: "referenceToCkUserRecord == %@", appleUserReference)
+            
+            // Fetch the real User record
+            self.fetchRecordsWithType("User", predicate: predicate, recordFetchedBlock: nil, completion: { (records, error) in
                 
-                self.fetchRecord(withID: recordID, completion: completion)
-            }
+                guard let currentUserRecord = records?.first else {  completion(nil, appleUserReference); return }
+                
+                let currentUser = User(ckrecord: currentUserRecord)
+                
+                completion(currentUser, nil)
+            })
         }
     }
+    
+//    func fetchLoggedInUserRecord(_ completion: ((_ record: CKRecord?, _ error: Error? ) -> Void)?) {
+//        
+//        CKContainer.default().fetchUserRecordID { (recordID, error) in
+//            
+//            if let error = error,
+//                let completion = completion {
+//                completion(nil, error)
+//            }
+//            
+//            if let recordID = recordID,
+//                let completion = completion {
+//                
+//                self.fetchRecord(withID: recordID, completion: completion)
+//            }
+//        }
+//    }
     
     func fetchUsername(for recordID: CKRecordID,
                        completion: @escaping ((_ givenName: String?, _ familyName: String?) -> Void) = { _,_ in }) {
@@ -135,19 +162,6 @@ class CloudKitManager {
         queryOperation.queryCompletionBlock = queryCompletionBlock
         
         self.publicDatabase.add(queryOperation)
-    }
-    
-    func fetchCurrentUserRecords(_ type: String, completion: ((_ records: [CKRecord]?, _ error: Error?) -> Void)?) {
-        
-        fetchLoggedInUserRecord { (record, error) in
-            
-            if let record = record {
-                
-                let predicate = NSPredicate(format: "%K == %@", argumentArray: [CreatorUserRecordIDKey, record.recordID])
-                
-                self.fetchRecordsWithType(type, predicate: predicate, recordFetchedBlock: nil, completion: completion)
-            }
-        }
     }
     
     func fetchRecordsFromDateRange(_ type: String, recordType: String, fromDate: Date, toDate: Date, completion: ((_ records: [CKRecord]?, _ error: Error?) -> Void)?) {
