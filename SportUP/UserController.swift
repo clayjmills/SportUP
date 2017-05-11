@@ -18,8 +18,9 @@ class UserController {
     
     func fetchLoggedInUser(completion: @escaping(Bool) -> Void) {
         
+        // send to cloudkit and get record back with all information back
         CloudKitManager.shared.fetchCurrentUser { (currentUser, appleUserRef) in
-            
+            //if user is nil run first closure, else run the second closure
             if currentUser != nil {
                 self.currentUser = currentUser
                 completion(true)

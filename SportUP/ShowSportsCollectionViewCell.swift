@@ -22,8 +22,6 @@ class ShowSportsCollectionViewCell: UICollectionViewCell {
     }
     func updateViews() {
         
-//        SportsController.shared.sportsList
-        
         guard let sports = sports else {return}
         imageView.image = UIImage(named: sports.imageName)
         sportsLabel.text = sports.sportsName 

@@ -174,6 +174,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         }
         return pin
     }
+    
+    //map.addAnnotations(self.annotations)
+    func updateAnnotations() {
+    }
 }
 ////create a custom class
 class CustomAnnotation: NSObject, MKAnnotation {

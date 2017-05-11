@@ -24,13 +24,16 @@ class MainViewController: UIViewController {
     
     func updateViews() {
         
-        self.findPickupGameButtonTapped.backgroundColor = UIColor.lightGray
+   //     self.findPickupGameButtonTapped.backgroundColor = UIColor.lightGray
         self.findPickupGameButtonTapped.layer.cornerRadius = 16
         self.findPickupGameButtonTapped.setTitle("Find Pickup Game", for: .normal)
+  //      self.findPickupGameButtonTapped.layer.borderColor = UIColor.blue
+        self.findPickupGameButtonTapped.layer.borderWidth = 6
         
-        self.createPickupGameButtonTapped.backgroundColor = UIColor.lightGray
+   //     self.createPickupGameButtonTapped.backgroundColor = UIColor.lightGray
         self.createPickupGameButtonTapped.layer.cornerRadius = 16
         self.createPickupGameButtonTapped.setTitle("Create Pickup Game", for: .normal)
-        
+  //      self.createPickupGameButtonTapped.layer.borderColor = UIColor.blue
+        self.createPickupGameButtonTapped.layer.borderWidth = 6
     }
 }

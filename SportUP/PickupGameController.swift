@@ -17,19 +17,7 @@ class PickupGameController {
     static let privateDataBase = CKContainer.default().privateCloudDatabase
     static let publicDatabase = CKContainer.default().publicCloudDatabase
     
-//    init() {
-//        loadFromPersistentStorage()
-//    }
-    
-//    private func loadFromPersistentStorage() {
-//
-//    }
-    
-    func create(pickupGame: PickupGame) {
-        
-    }
-    
-    
+   
     func savePickUpGameToCloudKit(pickUpGame: PickupGame, completion: @escaping(_ success: Bool) -> Void) {
         
         let record = pickUpGame.cloudKitRecord
@@ -44,6 +32,29 @@ class PickupGameController {
                 completion(true)
                 print("Saved to CloudKit")
             }
+        }
+    }
+    
+    // right place to fetch?
+    func fetchPickupGameFromCloudKit(sportType: String) {
+        
+        let predicate = NSPredicate(format: "sport == %@", sportType)
+
+        //Instance method. make sure to called the shared instance.
+        CloudKitManager.shared.fetchRecordsWithType(PickupGame.typeKey, predicate: predicate, recordFetchedBlock: nil) { (records, error) in
+            
+            if let error = error {
+                print("There was an error fetching pickupGames from CloudKit: \(error.localizedDescription)")
+                return
+            }
+            
+            // Use the records
+            guard let records = records else { return }
+            
+            let pickupGames = records.flatMap( { PickupGame(cloudKitRecord: $0) } )
+            
+            
+            
         }
     }
 }

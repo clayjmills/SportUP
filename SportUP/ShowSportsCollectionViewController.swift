@@ -42,4 +42,11 @@ class ShowSportsCollectionViewController: UICollectionViewController {
             mapVC.sportType = sportLabel
         }
     }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let sportType = SportsListArray.sportsNames[indexPath.row + 1]
+        
+        PickupGameController.shared.fetchPickupGameFromCloudKit(sportType: sportType)
+    }
 }
