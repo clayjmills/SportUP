@@ -16,7 +16,6 @@ class SportsController {
     
     init() {
         self.sportsList = createAllSports()
-        
     }
     
     func createAllSports() -> [Sports] {
@@ -38,6 +37,4 @@ class SportsController {
         }
         return placeHolderSports
     }
-    
-
 }

@@ -27,7 +27,6 @@
 		667146E21E9BD04F0074E8F1 /* CloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667146E11E9BD04F0074E8F1 /* CloudKitManager.swift */; };
 		667146E41E9BD0830074E8F1 /* PickupGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667146E31E9BD0830074E8F1 /* PickupGameController.swift */; };
 		667146E61E9BD0D30074E8F1 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667146E51E9BD0D30074E8F1 /* Map.swift */; };
-		667146E81E9BD0EA0074E8F1 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667146E71E9BD0EA0074E8F1 /* MapController.swift */; };
 		669A12AE1EBD2E830023BA23 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669A12AD1EBD2E830023BA23 /* User.swift */; };
 		66DFBAE61E96A481001B835E /* PickupGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DFBAE51E96A481001B835E /* PickupGame.swift */; };
 /* End PBXBuildFile section */
@@ -56,7 +55,6 @@
 		667146E11E9BD04F0074E8F1 /* CloudKitManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitManager.swift; sourceTree = "<group>"; };
 		667146E31E9BD0830074E8F1 /* PickupGameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickupGameController.swift; sourceTree = "<group>"; };
 		667146E51E9BD0D30074E8F1 /* Map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
-		667146E71E9BD0EA0074E8F1 /* MapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
 		669A12AD1EBD2E830023BA23 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		66DFBAE51E96A481001B835E /* PickupGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickupGame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -157,7 +155,6 @@
 				660C26E71E930A48003F675C /* SportsController.swift */,
 				664D5AA51EC11CA7006B9277 /* UserController.swift */,
 				667146E31E9BD0830074E8F1 /* PickupGameController.swift */,
-				667146E71E9BD0EA0074E8F1 /* MapController.swift */,
 				667146E11E9BD04F0074E8F1 /* CloudKitManager.swift */,
 			);
 			name = "Model Controllers";
@@ -266,7 +263,6 @@
 				660C26E21E92FA9F003F675C /* CreateGameViewController.swift in Sources */,
 				660C26B81E92CE40003F675C /* AppDelegate.swift in Sources */,
 				669A12AE1EBD2E830023BA23 /* User.swift in Sources */,
-				667146E81E9BD0EA0074E8F1 /* MapController.swift in Sources */,
 				660C26E61E930A21003F675C /* Sports.swift in Sources */,
 				660C26EE1E930B17003F675C /* ShowSportsCollectionViewCell.swift in Sources */,
 				660C26E81E930A48003F675C /* SportsController.swift in Sources */,

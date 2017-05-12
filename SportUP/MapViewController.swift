@@ -22,7 +22,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     // create properties
     var locationManager: CLLocationManager = CLLocationManager()
-//    var currentLocation: CustomAnnotation?
+    //    var currentLocation: CustomAnnotation?
     var shown: Bool = false
     var sportType: String?
     var date: Date?
@@ -50,7 +50,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         guard let sportType = sportType else { return }
         dropPinsFor(sport: sportType)
         
-//        long press gesture time
+        //        long press gesture time
         let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(addPinForNewSport(press:)))
         longPressGestureRecognizer.minimumPressDuration = 0.5
         map.addGestureRecognizer(longPressGestureRecognizer)
@@ -194,7 +194,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 let dateString = DateFormatter.localizedString(from: pickupGame.date, dateStyle: DateFormatter.Style.long, timeStyle: DateFormatter.Style.short)
                 annotation.subtitle = dateString
                 self.annotations.append(annotation)
-
+                
             }
             //add the annotation
             DispatchQueue.main.async {
@@ -211,7 +211,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
 //    var longitude: Double
 //    var name: String
 //    var thoroughfare: String
-//    
+//
 //    //memberwise initializer
 //    init(latitude: Double, longitude: Double, name: String, thoroughfare: String) {
 //        self.latitude = latitude

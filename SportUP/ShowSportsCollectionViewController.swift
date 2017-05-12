@@ -31,7 +31,7 @@ class ShowSportsCollectionViewController: UICollectionViewController {
         
         let sports = self.sportsList[indexPath.row]
         cell.sports = sports
-        return cell 
+        return cell
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

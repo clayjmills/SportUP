@@ -17,7 +17,7 @@ class PickupGameController {
     static let privateDataBase = CKContainer.default().privateCloudDatabase
     static let publicDatabase = CKContainer.default().publicCloudDatabase
     
-   
+    
     func savePickUpGameToCloudKit(pickUpGame: PickupGame, completion: @escaping(_ success: Bool) -> Void) {
         
         let record = pickUpGame.cloudKitRecord
@@ -39,7 +39,7 @@ class PickupGameController {
     func fetchPickupGameFromCloudKit(sportType: String, completion: @escaping ([PickupGame]) -> Void) {
         
         let predicate = NSPredicate(format: "sport == %@", sportType)
-
+        
         //Instance method. make sure to called the shared instance of a class.
         CloudKitManager.shared.fetchRecordsWithType(PickupGame.typeKey, predicate: predicate, recordFetchedBlock: nil) { (records, error) in
             
@@ -68,11 +68,10 @@ class PickupGameController {
                     group.leave()
                 })
             }
-            group.notify(queue: DispatchQueue.main, execute: { 
+            group.notify(queue: DispatchQueue.main, execute: {
                 
                 completion(pickupGames)
             })
-            
         }
     }
 }

@@ -41,7 +41,7 @@ class CreateGameViewController: UIViewController, UIPickerViewDataSource, UIPick
         let dateString = DateFormatter.localizedString(from: date, dateStyle: DateFormatter.Style.long, timeStyle: DateFormatter.Style.short)
         viewDateTextField.text = dateString
     }
-        
+    
     func updateViews() {
         
         // button to save date picker
@@ -86,5 +86,4 @@ class CreateGameViewController: UIViewController, UIPickerViewDataSource, UIPick
             sportPickerMapVC?.date = date
         }
     }
-    
 }
