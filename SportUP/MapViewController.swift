@@ -22,7 +22,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     // create properties
     var locationManager: CLLocationManager = CLLocationManager()
-    var currentLocation: CustomAnnotation?
+//    var currentLocation: CustomAnnotation?
     var shown: Bool = false
     var sportType: String?
     var date: Date?
@@ -50,7 +50,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         guard let sportType = sportType else { return }
         dropPinsFor(sport: sportType)
         
-        //long press gesture time
+//        long press gesture time
         let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(addPinForNewSport(press:)))
         longPressGestureRecognizer.minimumPressDuration = 0.5
         map.addGestureRecognizer(longPressGestureRecognizer)
@@ -120,6 +120,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     // add the long press gesture recognizer for pin drop
     func addPinForNewSport(press: UILongPressGestureRecognizer) {
         
+        guard let date = date else { return }
+        
         if press.state == .began {
             map.removeAnnotations(annotations)
             self.annotations = []
@@ -130,8 +132,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             //give location annotation
             let annotation = MKPointAnnotation()
             annotation.coordinate = coordinates
-            annotation.title = "owner"
-            annotation.subtitle = "city"
+            annotation.title = UserController.shared.currentUser?.username
+            let dateString = DateFormatter.localizedString(from: date, dateStyle: DateFormatter.Style.long, timeStyle: DateFormatter.Style.short)
+            annotation.subtitle = dateString
             self.annotations.append(annotation)
             //add the annotation
             map.addAnnotations(self.annotations)
@@ -166,15 +169,16 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         //make user location (pin) blue
         let pin = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "pin")
         pin.canShowCallout = true
-        pin.pinTintColor = UIColor.blue
+        pin.pinTintColor = UIColor.red
         //make color of dropped pins red
         if let title = annotation.title {
-            if title == "owner" {
-                pin.pinTintColor = UIColor.red
+            if title == "My Location" {
+                pin.pinTintColor = UIColor.blue
             }
         }
         return pin
     }
+    
     //to show pickup game pins on map
     
     func dropPinsFor(sport: String) {
@@ -186,8 +190,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 // get location
                 let location = pickupGame.location.coordinate
                 annotation.coordinate = location
-                annotation.title = "owner"
-                annotation.subtitle = "city"
+                annotation.title = pickupGame.owner?.username
+                let dateString = DateFormatter.localizedString(from: pickupGame.date, dateStyle: DateFormatter.Style.long, timeStyle: DateFormatter.Style.short)
+                annotation.subtitle = dateString
                 self.annotations.append(annotation)
 
             }
@@ -196,32 +201,33 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 self.map.addAnnotations(self.annotations)
             }
         }
+        map.showAnnotations(map.annotations, animated: true)
     }
 }
 ////create a custom class
-class CustomAnnotation: NSObject, MKAnnotation {
-    //properties
-    var latitude: Double
-    var longitude: Double
-    var name: String
-    var thoroughfare: String
-    
-    //memberwise initializer
-    init(latitude: Double, longitude: Double, name: String, thoroughfare: String) {
-        self.latitude = latitude
-        self.longitude = longitude
-        self.name = name
-        self.thoroughfare = thoroughfare
-    }
-    //return the coordinate made by latitude and longitude
-    var coordinate: CLLocationCoordinate2D {
-        let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-        return coordinate
-    }
-    var title: String? {
-        return name
-    }
-    var subtitle: String? {
-        return thoroughfare
-    }
-}
+//class CustomAnnotation: NSObject, MKAnnotation {
+//    //properties
+//    var latitude: Double
+//    var longitude: Double
+//    var name: String
+//    var thoroughfare: String
+//    
+//    //memberwise initializer
+//    init(latitude: Double, longitude: Double, name: String, thoroughfare: String) {
+//        self.latitude = latitude
+//        self.longitude = longitude
+//        self.name = name
+//        self.thoroughfare = thoroughfare
+//    }
+//    //return the coordinate made by latitude and longitude
+//    var coordinate: CLLocationCoordinate2D {
+//        let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+//        return coordinate
+//    }
+//    var title: String? {
+//        return name
+//    }
+//    var subtitle: String? {
+//        return thoroughfare
+//    }
+//}

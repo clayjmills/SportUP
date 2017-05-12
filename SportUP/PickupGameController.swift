@@ -53,7 +53,26 @@ class PickupGameController {
             
             let pickupGames = records.flatMap( { PickupGame(cloudKitRecord: $0) } )
             
-            completion(pickupGames)
+            let group = DispatchGroup()
+            
+            for pickupGame in pickupGames {
+                group.enter()
+                guard let ownerRef = pickupGame.ownerRef else { completion([]); return }
+                let predicate = NSPredicate(format: "recordID == %@", ownerRef)
+                CloudKitManager.shared.fetchRecordsWithType("User", predicate: predicate, recordFetchedBlock: nil, completion: { (records, error) in
+                    if let record = records?.first {
+                        if let user = User(ckrecord: record) {
+                            pickupGame.owner = user
+                        }
+                    }
+                    group.leave()
+                })
+            }
+            group.notify(queue: DispatchQueue.main, execute: { 
+                
+                completion(pickupGames)
+            })
+            
         }
     }
 }
