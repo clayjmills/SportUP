@@ -189,7 +189,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 annotation.title = "owner"
                 annotation.subtitle = "city"
                 self.annotations.append(annotation)
-                
+
             }
             //add the annotation
             DispatchQueue.main.async {
