@@ -19,7 +19,6 @@ class SportsController {
         
     }
     
-    
     func createAllSports() -> [Sports] {
         
         var placeHolderSports: [Sports] = []
@@ -42,41 +41,3 @@ class SportsController {
     
 
 }
-//func fetchRecordsWithType(_ type: String,
-//                          predicate: NSPredicate = NSPredicate(value: true),
-//                          recordFetchedBlock: ((_ record: CKRecord) -> Void)?,
-//                          completion: ((_ records: [CKRecord]?, _ error: Error?) -> Void)?) {
-//
-//    var fetchedRecords: [CKRecord] = []
-//
-//    let query = CKQuery(recordType: type, predicate: predicate)
-//    let queryOperation = CKQueryOperation(query: query)
-//
-//    let perRecordBlock = { (fetchedRecord: CKRecord) -> Void in
-//        fetchedRecords.append(fetchedRecord)
-//        recordFetchedBlock?(fetchedRecord)
-//    }
-//    queryOperation.recordFetchedBlock = perRecordBlock
-//
-//    var queryCompletionBlock: (CKQueryCursor?, Error?) -> Void = { (_, _) in }
-//
-//    queryCompletionBlock = { (queryCursor: CKQueryCursor?, error: Error?) -> Void in
-//
-//        if let queryCursor = queryCursor {
-//            // there are more results, go fetch them
-//
-//            let continuedQueryOperation = CKQueryOperation(cursor: queryCursor)
-//            continuedQueryOperation.recordFetchedBlock = perRecordBlock
-//            continuedQueryOperation.queryCompletionBlock = queryCompletionBlock
-//
-//            self.publicDatabase.add(continuedQueryOperation)
-//
-//        } else {
-//            completion?(fetchedRecords, error)
-//        }
-//    }
-//    queryOperation.queryCompletionBlock = queryCompletionBlock
-//
-//    self.publicDatabase.add(queryOperation)
-//}
-

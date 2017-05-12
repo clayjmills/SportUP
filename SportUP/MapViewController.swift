@@ -47,6 +47,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         sportLabel.text = sportType
         
+        guard let sportType = sportType else { return }
+        dropPinsFor(sport: sportType)
         
         //long press gesture time
         let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(addPinForNewSport(press:)))
@@ -84,7 +86,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             }
         }
     }
-    
     
     // location delegate methods
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -174,9 +175,27 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         }
         return pin
     }
+    //to show pickup game pins on map
     
-    //map.addAnnotations(self.annotations)
-    func updateAnnotations() {
+    func dropPinsFor(sport: String) {
+        
+        PickupGameController.shared.fetchPickupGameFromCloudKit(sportType: sport) { (pickupGames) in
+            for pickupGame in pickupGames {
+                //give location annotation
+                let annotation = MKPointAnnotation()
+                // get location
+                let location = pickupGame.location.coordinate
+                annotation.coordinate = location
+                annotation.title = "owner"
+                annotation.subtitle = "city"
+                self.annotations.append(annotation)
+                
+            }
+            //add the annotation
+            DispatchQueue.main.async {
+                self.map.addAnnotations(self.annotations)
+            }
+        }
     }
 }
 ////create a custom class

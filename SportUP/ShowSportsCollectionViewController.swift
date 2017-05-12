@@ -47,6 +47,8 @@ class ShowSportsCollectionViewController: UICollectionViewController {
         
         let sportType = SportsListArray.sportsNames[indexPath.row + 1]
         
-        PickupGameController.shared.fetchPickupGameFromCloudKit(sportType: sportType)
+        PickupGameController.shared.fetchPickupGameFromCloudKit(sportType: sportType) { (pickupGames) in
+            // FIXME: Do i need to add anything here?
+        }
     }
 }

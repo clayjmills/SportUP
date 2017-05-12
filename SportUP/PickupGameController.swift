@@ -36,11 +36,11 @@ class PickupGameController {
     }
     
     // right place to fetch?
-    func fetchPickupGameFromCloudKit(sportType: String) {
+    func fetchPickupGameFromCloudKit(sportType: String, completion: @escaping ([PickupGame]) -> Void) {
         
         let predicate = NSPredicate(format: "sport == %@", sportType)
 
-        //Instance method. make sure to called the shared instance.
+        //Instance method. make sure to called the shared instance of a class.
         CloudKitManager.shared.fetchRecordsWithType(PickupGame.typeKey, predicate: predicate, recordFetchedBlock: nil) { (records, error) in
             
             if let error = error {
@@ -53,8 +53,7 @@ class PickupGameController {
             
             let pickupGames = records.flatMap( { PickupGame(cloudKitRecord: $0) } )
             
-            
-            
+            completion(pickupGames)
         }
     }
 }
