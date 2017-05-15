@@ -28,6 +28,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SUPICON3" translatesAutoresizingMaskIntoConstraints="NO" id="2Ih-xh-UXi">
+                                <rect key="frame" x="65" y="211" width="245" height="245"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.99993377920000004" green="1" blue="0.99988192320000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -42,4 +46,7 @@
             <point key="canvasLocation" x="-191.19999999999999" y="236.13193403298354"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="SUPICON3" width="1536" height="1536"/>
+    </resources>
 </document>

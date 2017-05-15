@@ -332,8 +332,19 @@
                                 <rect key="frame" x="68" y="499" width="244" height="94"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <color key="textColor" red="0.24411541223526001" green="0.39876943826675415" blue="0.87638509273529053" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.29074755311012268" green="0.56374627351760864" blue="0.88500791788101196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="highlightedColor" red="0.99987024068832397" green="1" blue="0.99578660726547241" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SUPICON3" translatesAutoresizingMaskIntoConstraints="NO" id="GCE-dG-Qzc">
+                                <rect key="frame" x="65" y="211" width="245" height="245"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SportUP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GTt-9k-wUo">
+                                <rect key="frame" x="68" y="103" width="244" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" red="0.29074755311012268" green="0.56374627351760864" blue="0.88500791788101196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.99993377920000004" green="1" blue="0.99988192320000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -344,7 +355,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jHp-qe-dez" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1703" y="-19"/>
+            <point key="canvasLocation" x="1701.5999999999999" y="-19.340329835082461"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9vv-C5-BXs">
@@ -368,6 +379,7 @@
     </scenes>
     <resources>
         <image name="Faded 2 Emojis" width="157" height="989"/>
+        <image name="SUPICON3" width="1536" height="1536"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="JQo-Jo-xjI"/>
