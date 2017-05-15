@@ -28,37 +28,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SportUPBalls" translatesAutoresizingMaskIntoConstraints="NO" id="I1g-ks-N1g">
-                                <rect key="frame" x="40" y="186" width="295" height="295"/>
-                            </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HXk-94-6oa">
-                                <rect key="frame" x="324" y="179" width="35" height="306"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.24439513683319092" green="0.40187272429466248" blue="0.87320405244827271" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qpM-mI-Fke">
-                                <rect key="frame" x="29" y="174" width="301" height="16"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.24439513683319092" green="0.40187272429466248" blue="0.87320405244827271" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GSA-ee-n7Y">
-                                <rect key="frame" x="29" y="468" width="306" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.24439513683319092" green="0.40187272429466248" blue="0.87320405244827271" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2kx-ub-ivZ">
-                                <rect key="frame" x="25" y="174" width="30" height="318"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.2443951368" green="0.40187272429999998" blue="0.87320405239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.24439513683319092" green="0.40187272429466248" blue="0.87320405244827271" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.99993377920000004" green="1" blue="0.99988192320000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="I1g-ks-N1g" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="9Vt-FM-M58"/>
-                            <constraint firstItem="I1g-ks-N1g" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="166" id="Fsh-0e-h0x"/>
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="qCX-fw-7kR" secondAttribute="bottom" constant="9" id="JLL-15-ODi"/>
-                            <constraint firstItem="I1g-ks-N1g" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="24" id="Mkp-ID-7F6"/>
-                            <constraint firstItem="I1g-ks-N1g" firstAttribute="centerX" secondItem="qCX-fw-7kR" secondAttribute="centerX" id="SPv-Bt-Abd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="qCX-fw-7kR" secondAttribute="trailing" constant="113" id="m3h-h7-4ML"/>
                             <constraint firstItem="qCX-fw-7kR" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="113" id="po9-6r-krL"/>
                         </constraints>
@@ -69,7 +42,4 @@
             <point key="canvasLocation" x="-191.19999999999999" y="236.13193403298354"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="SportUPBalls" width="512" height="512"/>
-    </resources>
 </document>
