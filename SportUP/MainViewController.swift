@@ -14,7 +14,6 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var createPickupGameButtonTapped: UIButton!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,7 +21,7 @@ class MainViewController: UIViewController {
     }
     
     func updateViews() {
-        
+                
       //  self.findPickupGameButtonTapped.backgroundColor = UIColor.blue
         self.findPickupGameButtonTapped.layer.cornerRadius = 16
         self.findPickupGameButtonTapped.setTitle("Find Pickup Game", for: .normal)

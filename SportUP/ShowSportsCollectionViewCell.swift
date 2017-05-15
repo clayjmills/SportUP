@@ -24,6 +24,6 @@ class ShowSportsCollectionViewCell: UICollectionViewCell {
         
         guard let sports = sports else {return}
         imageView.image = UIImage(named: sports.imageName)
-        sportsLabel.text = sports.sportsName 
+        sportsLabel.text = sports.sportsName
     }
 }

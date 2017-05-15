@@ -45,9 +45,9 @@ class CreateGameViewController: UIViewController, UIPickerViewDataSource, UIPick
     func updateViews() {
         
         // button to save date picker
-        self.saveDateButtonTapped.backgroundColor = UIColor.lightGray
-        self.saveDateButtonTapped.layer.cornerRadius = 5
-        self.saveDateButtonTapped.setTitleColor(UIColor.white, for: .normal)
+       // self.saveDateButtonTapped.backgroundColor = UIColor.lightGray
+        self.saveDateButtonTapped.layer.cornerRadius = 16
+       // self.saveDateButtonTapped.setTitleColor(UIColor.white, for: .normal)
         
         // button to mapView
         self.toMapViewButtonTapped.setBackgroundImage(#imageLiteral(resourceName: "mapScreenShot"), for: .normal)
