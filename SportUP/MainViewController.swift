@@ -23,11 +23,11 @@ class MainViewController: UIViewController {
     
     func updateViews() {
         
-        self.findPickupGameButtonTapped.backgroundColor = UIColor.lightGray
+      //  self.findPickupGameButtonTapped.backgroundColor = UIColor.blue
         self.findPickupGameButtonTapped.layer.cornerRadius = 16
         self.findPickupGameButtonTapped.setTitle("Find Pickup Game", for: .normal)
         
-        self.createPickupGameButtonTapped.backgroundColor = UIColor.lightGray
+     //   self.createPickupGameButtonTapped.backgroundColor = UIColor.blue
         self.createPickupGameButtonTapped.layer.cornerRadius = 16
         self.createPickupGameButtonTapped.setTitle("Create Pickup Game", for: .normal)
     }
