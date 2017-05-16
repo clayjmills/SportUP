@@ -28,16 +28,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SUPICON3" translatesAutoresizingMaskIntoConstraints="NO" id="2Ih-xh-UXi">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SUPICON4" translatesAutoresizingMaskIntoConstraints="NO" id="WTw-4c-EhT">
                                 <rect key="frame" x="65" y="211" width="245" height="245"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.99993377920000004" green="1" blue="0.99988192320000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="qCX-fw-7kR" secondAttribute="bottom" constant="9" id="JLL-15-ODi"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="qCX-fw-7kR" secondAttribute="trailing" constant="113" id="m3h-h7-4ML"/>
-                            <constraint firstItem="qCX-fw-7kR" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="113" id="po9-6r-krL"/>
+                            <constraint firstItem="WTw-4c-EhT" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="3SR-P4-BF4"/>
+                            <constraint firstItem="WTw-4c-EhT" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="6Pp-ju-wHC"/>
+                            <constraint firstItem="WTw-4c-EhT" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="191" id="772-7m-ZkU"/>
+                            <constraint firstItem="WTw-4c-EhT" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="49" id="dw1-bN-9zv"/>
+                            <constraint firstItem="WTw-4c-EhT" firstAttribute="centerX" secondItem="qCX-fw-7kR" secondAttribute="centerX" id="f5w-RV-Rtg"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="qCX-fw-7kR" secondAttribute="bottom" constant="9" id="pLN-ri-rky"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -47,6 +49,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="SUPICON3" width="1536" height="1536"/>
+        <image name="SUPICON4" width="1536" height="1536"/>
     </resources>
 </document>

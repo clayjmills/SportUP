@@ -37,6 +37,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dn4-ds-z0I">
                                 <rect key="frame" x="16" y="213" width="343" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.78655614385154182" green="0.897088778915481" blue="1" alpha="0.50452161815068497" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Create pickup game button">
                                     <color key="titleColor" red="0.24411541223526001" green="0.39876943826675415" blue="0.87638509273529053" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -48,6 +49,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kj4-fE-aWg">
                                 <rect key="frame" x="16" y="346" width="343" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.78655614385154182" green="0.897088778915481" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Title">
                                     <color key="titleColor" red="0.24411541223526001" green="0.39876943826675415" blue="0.87638509273529053" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -134,7 +136,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2kg-NC-fyc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4308" y="-19"/>
+            <point key="canvasLocation" x="4138" y="-19"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="SBa-HE-S1H">
@@ -203,7 +205,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6S1-HA-VDi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4308" y="775.86206896551732"/>
+            <point key="canvasLocation" x="4137" y="707"/>
         </scene>
         <!--Create Game View Controller-->
         <scene sceneID="aWZ-oK-hCP">
@@ -276,6 +278,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HfL-Do-Ovq">
                                         <rect key="frame" x="8" y="430" width="359" height="45"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.78655614385154182" green="0.897088778915481" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                         <state key="normal" title="Submit Date">
                                             <color key="titleColor" red="0.24411541223526001" green="0.39876943826675415" blue="0.87638509273529053" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -314,7 +317,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uh9-4T-phC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3284" y="775.86206896551732"/>
+            <point key="canvasLocation" x="3284" y="707"/>
         </scene>
         <!--Loading View Controller-->
         <scene sceneID="z4R-iv-Rvw">
@@ -328,23 +331,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Go play" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="icb-Vg-6Qc">
-                                <rect key="frame" x="68" y="499" width="244" height="94"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <color key="textColor" red="0.29074755311012268" green="0.56374627351760864" blue="0.88500791788101196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="highlightedColor" red="0.99987024068832397" green="1" blue="0.99578660726547241" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SUPICON3" translatesAutoresizingMaskIntoConstraints="NO" id="GCE-dG-Qzc">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SUPICON4" translatesAutoresizingMaskIntoConstraints="NO" id="GCE-dG-Qzc">
                                 <rect key="frame" x="65" y="211" width="245" height="245"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.88868170976638794" green="0.94932156801223755" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SportUP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GTt-9k-wUo">
-                                <rect key="frame" x="68" y="103" width="244" height="54"/>
+                                <rect key="frame" x="68" y="139" width="244" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <color key="textColor" red="0.29074755311012268" green="0.56374627351760864" blue="0.88500791788101196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Go play" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="icb-Vg-6Qc">
+                                <rect key="frame" x="65" y="473" width="244" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" red="0.29074755311012268" green="0.56374627351760864" blue="0.88500791788101196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="highlightedColor" red="0.99987024068832397" green="1" blue="0.99578660726547241" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.99993377920000004" green="1" blue="0.99988192320000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -355,7 +359,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jHp-qe-dez" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1701.5999999999999" y="-19.340329835082461"/>
+            <point key="canvasLocation" x="1812" y="-19.340329835082461"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9vv-C5-BXs">
@@ -374,12 +378,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TMQ-Bn-NbB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2430" y="-19"/>
+            <point key="canvasLocation" x="2543" y="-19"/>
         </scene>
     </scenes>
     <resources>
         <image name="Faded 2 Emojis" width="157" height="989"/>
-        <image name="SUPICON3" width="1536" height="1536"/>
+        <image name="SUPICON4" width="1536" height="1536"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="JQo-Jo-xjI"/>
