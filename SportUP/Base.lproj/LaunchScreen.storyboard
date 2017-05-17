@@ -32,7 +32,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SUPICON4" translatesAutoresizingMaskIntoConstraints="NO" id="WTw-4c-EhT">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SportUPMain 6" translatesAutoresizingMaskIntoConstraints="NO" id="WTw-4c-EhT">
                                 <rect key="frame" x="65" y="211" width="245" height="245"/>
                             </imageView>
                         </subviews>
@@ -57,6 +57,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="SUPICON4" width="1536" height="1536"/>
+        <image name="SportUPMain 6" width="1536" height="1536"/>
     </resources>
 </document>

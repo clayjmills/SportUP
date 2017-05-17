@@ -98,7 +98,7 @@
         <scene sceneID="YKc-8W-L3A">
             <objects>
                 <collectionViewController id="y3A-Yy-mZh" customClass="ShowSportsCollectionViewController" customModule="SportUP" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" misplaced="YES" keyboardDismissMode="onDrag" dataMode="prototypes" id="unN-Gn-Rqc">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" keyboardDismissMode="onDrag" dataMode="prototypes" id="unN-Gn-Rqc">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.35868051648139954" green="0.55889278650283813" blue="0.86134207248687744" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -413,7 +413,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SUPICON4" translatesAutoresizingMaskIntoConstraints="NO" id="GCE-dG-Qzc">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SportUPMain 6" translatesAutoresizingMaskIntoConstraints="NO" id="GCE-dG-Qzc">
                                 <rect key="frame" x="65" y="211" width="245" height="245"/>
                                 <color key="backgroundColor" red="0.88868170976638794" green="0.94932156801223755" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
@@ -490,7 +490,7 @@
     </scenes>
     <resources>
         <image name="Faded 2 Emojis" width="157" height="989"/>
-        <image name="SUPICON4" width="1536" height="1536"/>
+        <image name="SportUPMain 6" width="1536" height="1536"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Ha1-iy-8y1"/>
